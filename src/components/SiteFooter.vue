@@ -40,7 +40,7 @@ const year = new Date().getFullYear()
             <li><RouterLink to="/privacy" class="text-sm hover:underline">Privacy Policy</RouterLink></li>
             <li><RouterLink to="/terms" class="text-sm hover:underline">Terms of Service</RouterLink></li>
             <li>
-              <a href="mailto:support@cookiejar.app" class="text-sm hover:underline">Support</a>
+              <a href="mailto:robinvuewatson@gmail.com" class="text-sm hover:underline">Support</a>
             </li>
           </ul>
         </div>
