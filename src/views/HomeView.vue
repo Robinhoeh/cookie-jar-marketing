@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const installUrl = 'https://slack.com/oauth/v2/authorize'
+import { addToSlackUrl } from '@/config/links'
 </script>
 
 <template>
@@ -13,7 +13,7 @@ const installUrl = 'https://slack.com/oauth/v2/authorize'
     </p>
     <div class="mt-10 flex items-center justify-center gap-4 flex-wrap">
       <a
-        :href="installUrl"
+        :href="addToSlackUrl"
         class="inline-flex items-center px-6 py-3 text-base font-semibold rounded-xl bg-brand-purple text-white hover:bg-brand-purple/90 transition-colors no-underline shadow-soft"
       >
         Add to Slack
