@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref, watch } from 'vue'
 import { useRoute } from 'vue-router'
+import { signInUrl, addToSlackUrl } from '@/config/links'
 
 const route = useRoute()
 
@@ -15,10 +16,6 @@ const mobileOpen = ref(false)
 watch(() => route.fullPath, () => {
   mobileOpen.value = false
 })
-
-// TODO(Phase B): wire to the real Slack OAuth install URL — same one the
-// dashboard's marketplace pivot points at.
-const installUrl = 'https://slack.com/oauth/v2/authorize'
 </script>
 
 <template>
@@ -59,13 +56,13 @@ const installUrl = 'https://slack.com/oauth/v2/authorize'
 
         <div class="hidden min-[768px]:flex items-center gap-3 shrink-0">
           <a
-            href="https://cookiejar-dashboard.web.app"
+            :href="signInUrl"
             class="inline-flex items-center px-3 py-2 text-sm font-medium rounded-lg text-ui-muted hover:text-ui-text hover:bg-brand-cream/50 transition-colors no-underline"
           >
             Sign in
           </a>
           <a
-            :href="installUrl"
+            :href="addToSlackUrl"
             class="inline-flex items-center px-4 py-2 text-sm font-semibold rounded-lg bg-brand-purple text-white hover:bg-brand-purple/90 transition-colors no-underline shadow-soft"
           >
             Add to Slack
@@ -140,13 +137,13 @@ const installUrl = 'https://slack.com/oauth/v2/authorize'
 
         <div class="mt-3 pt-3 border-t border-ui-border flex flex-col gap-2">
           <a
-            href="https://cookiejar-dashboard.web.app"
+            :href="signInUrl"
             class="flex items-center px-3 py-2 text-sm font-medium rounded-lg text-ui-muted hover:text-ui-text hover:bg-brand-cream/50 transition-colors no-underline"
           >
             Sign in
           </a>
           <a
-            :href="installUrl"
+            :href="addToSlackUrl"
             class="flex items-center justify-center px-3 py-2 text-sm font-semibold rounded-lg bg-brand-purple text-white hover:bg-brand-purple/90 transition-colors no-underline"
           >
             Add to Slack
