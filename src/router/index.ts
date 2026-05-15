@@ -39,6 +39,12 @@ export const router = createRouter({
       component: () => import('@/views/TermsView.vue'),
       meta: { title: 'Terms of Service — Cookie Jar' },
     },
+    {
+      path: '/support',
+      name: 'support',
+      component: () => import('@/views/SupportView.vue'),
+      meta: { title: 'Support — Cookie Jar' },
+    },
   ],
   scrollBehavior() {
     return { top: 0 }

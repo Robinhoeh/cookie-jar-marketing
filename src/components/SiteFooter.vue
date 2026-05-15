@@ -39,9 +39,7 @@ const year = new Date().getFullYear()
           <ul class="space-y-2 list-none m-0 p-0">
             <li><RouterLink to="/privacy" class="text-sm hover:underline">Privacy Policy</RouterLink></li>
             <li><RouterLink to="/terms" class="text-sm hover:underline">Terms of Service</RouterLink></li>
-            <li>
-              <a href="mailto:robinvuewatson@gmail.com" class="text-sm hover:underline">Support</a>
-            </li>
+            <li><RouterLink to="/support" class="text-sm hover:underline">Support</RouterLink></li>
           </ul>
         </div>
       </div>
