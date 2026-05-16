@@ -23,7 +23,7 @@ watch(() => route.fullPath, () => {
 
 <template>
   <header class="sticky top-0 z-40 backdrop-blur-md bg-cream-bg/80 border-b border-cream-border">
-    <div class="mx-auto max-w-[1280px] px-6 min-[1024px]:px-8">
+    <div class="mx-auto max-w-[1280px] px-4 min-[640px]:px-6 min-[1024px]:px-8">
       <div class="flex items-center justify-between h-16 gap-6">
         <RouterLink
           to="/"
@@ -121,7 +121,7 @@ watch(() => route.fullPath, () => {
       id="mobile-nav-menu"
       class="absolute top-full left-0 right-0 z-30 min-[768px]:hidden bg-cream-card border-b border-cream-border shadow-lg"
     >
-      <div class="mx-auto max-w-[1280px] px-6 py-4">
+      <div class="mx-auto max-w-[1280px] px-4 min-[640px]:px-6 py-4">
         <ul class="flex flex-col gap-1 list-none m-0 p-0" role="list">
           <li v-for="item in navItems" :key="item.name">
             <RouterLink

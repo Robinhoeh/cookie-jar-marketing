@@ -8,7 +8,7 @@ const year = new Date().getFullYear()
 
 <template>
   <footer class="bg-ink text-cream-bg mt-0">
-    <div class="mx-auto max-w-[1280px] px-6 min-[1024px]:px-8 py-16 min-[768px]:py-20">
+    <div class="mx-auto max-w-[1280px] px-4 min-[640px]:px-6 min-[1024px]:px-8 py-16 min-[768px]:py-20">
       <div class="grid gap-10 min-[768px]:grid-cols-4 min-[768px]:gap-12">
         <div class="min-[768px]:col-span-1">
           <RouterLink
