@@ -78,6 +78,78 @@
         "CTO opens the dashboard maybe once a month"
       ]
     },
+    "realSlackOutput": {
+      "eyebrow": "real slack output",
+      "titleLine1": "Every command,",
+      "titleLine2": "exactly as Slack shows it.",
+      "lede": "No stylized renders. These are the ephemeral messages Cookie Jar posts back when you run a command — same copy, same structure.",
+      "demos": [
+        {
+          "cmd": "/cookie [tool]",
+          "desc": "When a tool isn't on the shelf, Cookie Jar suggests the closest match and lists the full shelf."
+        },
+        {
+          "cmd": "/cookie me",
+          "desc": "Your jar. Every tool you have, who granted it, in one ephemeral list."
+        },
+        {
+          "cmd": "/cookie who {'@'}person",
+          "desc": "Anyone in your workspace can peek at a teammate's jar — basis for /cookie like."
+        },
+        {
+          "cmd": "/cookie shelf",
+          "desc": "Admin view of every cookie on the shelf, its approval policy, and the owner if there is one."
+        }
+      ]
+    },
+    "featuresGrid": {
+      "eyebrow": "what's in the jar today",
+      "titleLine1": "Everything below is shipping today.",
+      "titleLine2": "Included on Starter and Pro.",
+      "items": [
+        {
+          "title": "One-click approve / deny",
+          "body": "Owners get a Slack DM with [Approve] [Deny] buttons. One click resolves the request, the audit log captures the decision, and the requester gets DM'd the outcome."
+        },
+        {
+          "title": "/cookie like {'@'}teammate",
+          "body": "Clone a teammate's tool list in one command. Type /cookie like {'@'}sarah, see her tools as checkboxes, tick what the new hire needs, hit Request. Owners get pinged for each tool — one click each to approve."
+        },
+        {
+          "title": "24 tools pre-loaded",
+          "body": "Jira, GitHub, Figma, Notion, Linear, AWS, GCP, Datadog, Sentry, Stripe, and 14 more. Plus your own custom tools — up to 3 on Starter, up to 20 on Pro, unlimited on Family Size."
+        },
+        {
+          "title": "Real-time access overview",
+          "body": "Dashboard view of who has what across the org. Person cards with tool badges. Filter, search, see at a glance."
+        },
+        {
+          "title": "Audit log on every action",
+          "body": "Every grant, revoke, approve, deny, admin promotion — recorded with actor, target, tool, and timestamp. Browseable view in Slack and dashboard coming soon."
+        },
+        {
+          "title": "Onboarding DM for new joiners",
+          "body": "When someone joins your Slack workspace, Cookie Jar auto-DMs them with a starter command list. They self-serve from minute one."
+        }
+      ]
+    },
+    "offboarding": {
+      "badge": "Pro roadmap",
+      "eyebrow": "offboarding · coming soon",
+      "titleLine1": "When things don't work out,",
+      "titleLine2": "empty the jar in one command.",
+      "bodyBefore": "Someone leaving the team? Type ",
+      "bodyChip": "/cookie take {'@'}bob all",
+      "bodyAfter": " and Cookie Jar will list every tool Bob has, who owns each one, and what it costs you per month — and DM each owner a revoke checklist. No Notion page, no spreadsheet, no Friday-evening guesswork.",
+      "bullets": [
+        "Complete picture of someone's access in one place",
+        "Owners get a per-tool revoke checklist in Slack",
+        "Cost-per-seat surfaced so you know what you save"
+      ],
+      "honestyBefore": "Not yet built. Today, offboarding is manual — you check the dashboard for who has what and ask each owner to revoke (same shape as adding a seat). The ",
+      "honestyChip": "/cookie take",
+      "honestyAfter": " auto-flow ships on Pro alongside auto-provisioning."
+    },
     "pipeline": {
       "eyebrow": "what it actually does",
       "headlineLine1": "The pipeline,",

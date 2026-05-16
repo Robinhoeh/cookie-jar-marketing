@@ -11,6 +11,9 @@ import PipelineSection from '@/components/home/PipelineSection.vue'
 import Standout1Section from '@/components/home/Standout1Section.vue'
 import Standout2Section from '@/components/home/Standout2Section.vue'
 import Standout3Section from '@/components/home/Standout3Section.vue'
+import OffboardingSection from '@/components/home/OffboardingSection.vue'
+import FeaturesGridSection from '@/components/home/FeaturesGridSection.vue'
+import RealSlackOutputSection from '@/components/home/RealSlackOutputSection.vue'
 
 const { t } = useI18n()
 </script>
@@ -149,7 +152,16 @@ const { t } = useI18n()
   <!-- Section 6: Standout feature 3 — Slack-first -->
   <Standout3Section />
 
-  <!-- Sections 7-14 follow in subsequent Phase 4 + 5 steps -->
+  <!-- Section 7: Offboarding (Pro roadmap, dark plum) -->
+  <OffboardingSection />
+
+  <!-- Section 8: Features grid — what's in the jar today (dark continuation) -->
+  <FeaturesGridSection />
+
+  <!-- Section 9: Real Slack output — 4 command demos -->
+  <RealSlackOutputSection />
+
+  <!-- Sections 10-14 follow in subsequent Phase 4 + 5 steps -->
   <section class="mx-auto max-w-3xl px-4 py-12 text-center">
     <p class="font-mono text-[11px] uppercase tracking-[1.4px] text-ink-muted">
       More sections coming in the next steps.
