@@ -31,14 +31,14 @@ import SlackBtn from '@/components/slack/SlackBtn.vue'
           "joining the API team this week — need it for the auth refactor."
         </div>
 
-        <div class="flex gap-2 mt-3 items-center flex-wrap">
+        <div class="flex gap-2 mt-3 items-center">
           <SlackBtn variant="primary">
             <template #icon><span>✓</span></template>
             Approve
           </SlackBtn>
           <SlackBtn variant="danger">Deny</SlackBtn>
           <SlackBtn>Ask why</SlackBtn>
-          <span class="min-[420px]:ml-auto text-[11.5px] text-ink-muted">You + 2 co-owners</span>
+          <span class="ml-auto text-[11.5px] text-ink-muted">You + 2 co-owners</span>
         </div>
       </BotCard>
     </BotMsg>

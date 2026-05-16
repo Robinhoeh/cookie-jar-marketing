@@ -29,71 +29,16 @@
   },
   "home": {
     "hero": {
-      "title": "Slack-native access management",
-      "subtitle": "Cookie Jar lets teams request access to tools, route approvals to the right owner, and see who has what — all from Slack.",
+      "statusPillMobile": "Slack-first · First month free",
+      "statusPillDesktop": "Slack-first access management · First month free",
+      "headlineLine1": "Cookie Jar —",
+      "headlineLine2": "because your CTO has",
+      "headlineLine3": "better things to do.",
+      "subheadline": "Hand off access, keep the visibility.",
+      "lede": "Tool owners approve in Slack. You see who has what, when you want.",
       "ctaPrimary": "Add to Slack",
-      "ctaSecondary": "How it works"
-    },
-    "afterInstall": {
-      "eyebrow": "After install",
-      "title": "Five minutes from install to your team grabbing cookies.",
-      "subtitle": "Hand off access, keep the visibility. Here's what happens after you click Add to Slack."
-    },
-    "steps": [
-      {
-        "title": "Install Cookie Jar in Slack",
-        "body": "One click. Cookie Jar adds itself to your workspace and pre-loads 24 common tools — GitHub, Jira, Figma, Notion, AWS, and 19 more.",
-        "detail": "Only Slack workspace admins or owners can install. The installer becomes the first Cookie Jar admin.",
-        "alt": "The Cookie Jar shelf showing pre-loaded tools ready to assign."
-      },
-      {
-        "title": "Assign tool owners from the dashboard",
-        "body": "Open the Shelf and add an owner per tool — head of design owns Figma, head of engineering owns GitHub. Multi-owner committees supported.",
-        "detail": "Until you assign owners, requests fall back to admins. Two minutes here saves a hundred DMs later.",
-        "alt": "Dashboard showing who has access to what across the team."
-      },
-      {
-        "title": "Your team grabs cookies with /cookie",
-        "body": "Anyone in Slack types /cookie [tool] to request access. /cookie like {'@'}teammate clones a coworker's tool list — perfect for new hires.",
-        "detail": "",
-        "alt": "A team member typing /cookie github in Slack."
-      },
-      {
-        "title": "Owners approve in one click. Audit log captures it.",
-        "body": "The right owner gets a Slack DM with Approve and Deny buttons. One click resolves the request, the requester gets notified, and the audit log records actor, target, and timestamp.",
-        "detail": "",
-        "alt": "An owner receiving a Slack DM with Approve and Deny buttons."
-      }
-    ],
-    "whatYouGet": {
-      "title": "What you get on day one",
-      "items": [
-        {
-          "title": "Lives in Slack",
-          "body": "Approve, request, audit — all from the chat your team's already in. Zero new UI to learn."
-        },
-        {
-          "title": "Owners, not the CTO inbox",
-          "body": "Requests reach the person who actually runs each tool. Multi-owner committees supported."
-        },
-        {
-          "title": "Audit log on every action",
-          "body": "Every grant, revoke, approve, deny is recorded with actor, target, tool, and timestamp."
-        }
-      ]
-    },
-    "finalCta": {
-      "title": "Ready to hand off access?",
-      "subtitle": "Free for the first month. No credit card up front. Five minutes to install.",
-      "ctaPrimary": "Add to Slack",
-      "ctaSecondary": "See pricing"
-    },
-    "legalFooter": {
-      "prefix": "Read our",
-      "privacy": "Privacy Policy",
-      "and": "and",
-      "terms": "Terms of Service",
-      "suffix": "."
+      "ctaSecondary": "Sign in",
+      "finePrint": "First month free · Card required · Slack admin install only"
     }
   },
   "features": {

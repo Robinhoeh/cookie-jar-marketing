@@ -19,27 +19,32 @@ const mobileOpen = ref(false)
 watch(() => route.fullPath, () => {
   mobileOpen.value = false
 })
+
+function closeDrawer() {
+  mobileOpen.value = false
+}
 </script>
 
 <template>
-  <header class="sticky top-0 z-40 backdrop-blur-md bg-cream-bg/80 border-b border-cream-border">
+  <header class="sticky top-0 z-40 backdrop-blur-md bg-cream-bg/[0.94] border-b border-cream-border">
     <div class="mx-auto max-w-[1280px] px-4 min-[640px]:px-6 min-[1024px]:px-8">
-      <div class="flex items-center justify-between h-16 gap-6">
+      <div class="flex items-center justify-between h-[58px] min-[768px]:h-16 gap-3 min-[768px]:gap-6">
         <RouterLink
           to="/"
-          class="flex items-center gap-2.5 no-underline shrink-0"
+          class="flex items-center gap-2 min-[768px]:gap-2.5 no-underline shrink-0"
           :aria-label="t('header.logoAlt')"
         >
           <img
             src="/cookie-jar-icon-2048-slack-marketplace.png"
             alt=""
-            class="w-9 h-9 rounded-lg shrink-0"
+            class="w-[30px] h-[30px] min-[768px]:w-9 min-[768px]:h-9 rounded-lg shrink-0"
             width="36"
             height="36"
           />
-          <span class="font-display font-bold text-[20px] text-ink tracking-tight">Cookie Jar</span>
+          <span class="font-display font-bold text-[17px] min-[768px]:text-[20px] text-ink tracking-tight">Cookie Jar</span>
         </RouterLink>
 
+        <!-- Desktop nav -->
         <nav class="hidden min-[768px]:flex items-center gap-7 flex-1 justify-center" role="navigation">
           <RouterLink
             v-for="item in navItems"
@@ -57,6 +62,7 @@ watch(() => route.fullPath, () => {
           </RouterLink>
         </nav>
 
+        <!-- Desktop CTAs -->
         <div class="hidden min-[768px]:flex items-center gap-4 shrink-0">
           <a
             :href="signInUrl"
@@ -73,88 +79,85 @@ watch(() => route.fullPath, () => {
           </a>
         </div>
 
-        <button
-          type="button"
-          class="min-[768px]:hidden inline-flex items-center justify-center w-10 h-10 rounded-lg text-ink-muted hover:text-ink hover:bg-cream-tint transition-colors border-0 bg-transparent cursor-pointer"
-          :aria-expanded="mobileOpen"
-          aria-controls="mobile-nav-menu"
-          :aria-label="t('header.menuToggleAria')"
-          @click="mobileOpen = !mobileOpen"
-        >
-          <svg
-            v-if="!mobileOpen"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="w-6 h-6"
-            aria-hidden="true"
-          >
-            <line x1="3" y1="6" x2="21" y2="6" />
-            <line x1="3" y1="12" x2="21" y2="12" />
-            <line x1="3" y1="18" x2="21" y2="18" />
-          </svg>
-          <svg
-            v-else
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="w-6 h-6"
-            aria-hidden="true"
-          >
-            <line x1="18" y1="6" x2="6" y2="18" />
-            <line x1="6" y1="6" x2="18" y2="18" />
-          </svg>
-        </button>
-      </div>
-    </div>
-
-    <div
-      v-show="mobileOpen"
-      id="mobile-nav-menu"
-      class="absolute top-full left-0 right-0 z-30 min-[768px]:hidden bg-cream-card border-b border-cream-border shadow-lg"
-    >
-      <div class="mx-auto max-w-[1280px] px-4 min-[640px]:px-6 py-4">
-        <ul class="flex flex-col gap-1 list-none m-0 p-0" role="list">
-          <li v-for="item in navItems" :key="item.name">
-            <RouterLink
-              :to="item.to"
-              class="flex items-center px-3 py-2 text-[14px] font-semibold rounded-lg transition-colors no-underline"
-              :class="
-                route.name === item.name
-                  ? 'bg-purple-tint text-ink'
-                  : 'text-ink-muted hover:text-ink hover:bg-cream-tint'
-              "
-              :aria-current="route.name === item.name ? 'page' : undefined"
-            >
-              {{ item.label }}
-            </RouterLink>
-          </li>
-        </ul>
-
-        <div class="mt-3 pt-3 border-t border-cream-border flex flex-col gap-2">
-          <a
-            :href="signInUrl"
-            class="flex items-center px-3 py-2 text-[14px] font-semibold rounded-lg text-ink-muted hover:text-ink hover:bg-cream-tint transition-colors no-underline"
-          >
-            {{ t('header.signIn') }}
-          </a>
+        <!-- Mobile compact "Add" + hamburger -->
+        <div class="flex min-[768px]:hidden items-center gap-2 shrink-0">
           <a
             :href="addToSlackUrl"
-            class="flex items-center justify-center gap-2 px-3 py-2.5 rounded-[10px] bg-ink text-gold text-[14px] font-bold hover:brightness-110 transition no-underline"
+            class="inline-flex items-center gap-1.5 px-3 py-2 rounded-lg bg-ink text-gold text-[12.5px] font-bold whitespace-nowrap no-underline"
           >
-            <SlackGlyph :size="16" />
-            {{ t('header.addToSlack') }}
+            <SlackGlyph :size="13" />
+            Add
           </a>
+          <button
+            type="button"
+            class="hamburger w-[38px] h-[38px] bg-white border border-cream-border rounded-lg relative p-0 cursor-pointer"
+            :aria-expanded="mobileOpen"
+            aria-controls="mobile-nav-drawer"
+            :aria-label="t('header.menuToggleAria')"
+            @click="mobileOpen = !mobileOpen"
+          >
+            <span
+              class="absolute left-1/2 top-1/2 block w-4 h-[2px] rounded-[1px] bg-ink transition-transform duration-200 origin-center"
+              :style="mobileOpen
+                ? 'transform: translate(-50%, -50%) rotate(45deg);'
+                : 'transform: translate(-50%, calc(-50% - 6px));'"
+            />
+            <span
+              class="absolute left-1/2 top-1/2 block w-4 h-[2px] rounded-[1px] bg-ink transition-opacity duration-150"
+              :style="mobileOpen
+                ? 'opacity: 0; transform: translate(-50%, -50%);'
+                : 'opacity: 1; transform: translate(-50%, -50%);'"
+            />
+            <span
+              class="absolute left-1/2 top-1/2 block w-4 h-[2px] rounded-[1px] bg-ink transition-transform duration-200 origin-center"
+              :style="mobileOpen
+                ? 'transform: translate(-50%, -50%) rotate(-45deg);'
+                : 'transform: translate(-50%, calc(-50% + 6px));'"
+            />
+          </button>
         </div>
       </div>
     </div>
+
   </header>
+
+  <!-- Mobile drawer — teleported to <body> so `fixed inset-0` escapes the
+       sticky header's containing block and the backdrop covers the whole viewport. -->
+  <Teleport to="body">
+    <div
+      v-if="mobileOpen"
+      id="mobile-nav-drawer"
+      class="fixed inset-0 z-50 min-[768px]:hidden flex flex-col"
+      style="background: rgba(45,30,47,0.45);"
+      @click="closeDrawer"
+    >
+      <div
+        class="bg-cream-bg border-b border-cream-border px-[18px] py-3.5 pb-7 flex flex-col"
+        style="margin-top: 58px; box-shadow: 0 16px 32px -8px rgba(45,30,47,0.25);"
+        @click.stop
+      >
+        <RouterLink
+          v-for="item in navItems"
+          :key="item.name"
+          :to="item.to"
+          class="flex items-center justify-between px-1 py-3.5 text-[19px] font-display font-semibold no-underline"
+          :class="route.name === item.name ? 'text-purple' : 'text-ink'"
+          :aria-current="route.name === item.name ? 'page' : undefined"
+          @click="closeDrawer"
+        >
+          <span>{{ item.label }}</span>
+          <span class="text-base" :class="route.name === item.name ? 'text-purple' : 'text-[#C8BCC0]'">→</span>
+        </RouterLink>
+        <div class="h-px bg-cream-border my-2.5" />
+        <a
+          :href="signInUrl"
+          class="flex items-center justify-between px-1 py-3.5 text-[19px] font-display font-semibold text-ink-muted no-underline"
+          @click="closeDrawer"
+        >
+          <span>{{ t('header.signIn') }}</span>
+          <span class="text-base text-[#C8BCC0]">→</span>
+        </a>
+      </div>
+    </div>
+  </Teleport>
 </template>

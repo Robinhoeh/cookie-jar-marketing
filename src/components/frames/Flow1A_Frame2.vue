@@ -35,32 +35,30 @@ const tools: Tool[] = [
           <label
             v-for="tool in tools"
             :key="tool.name"
-            class="flex items-start gap-2.5 px-2.5 py-2 bg-white rounded-lg border border-cream-border cursor-pointer"
+            class="flex items-center gap-2.5 px-2.5 py-2 bg-white rounded-lg border border-cream-border cursor-pointer flex-nowrap whitespace-nowrap"
           >
             <span
-              class="w-[18px] h-[18px] rounded-[5px] flex items-center justify-center text-white text-[12px] font-extrabold shrink-0 mt-0.5"
+              class="w-[18px] h-[18px] rounded-[5px] flex items-center justify-center text-white text-[12px] font-extrabold shrink-0"
               :style="tool.checked
                 ? { background: '#B000FF', border: '1px solid #B000FF' }
                 : { background: '#FFFFFF', border: '1.5px solid #C7BBC9' }"
             >{{ tool.checked ? '✓' : '' }}</span>
-            <div class="flex-1 min-w-0 flex flex-wrap items-baseline gap-x-2 gap-y-1">
-              <span class="text-[14px] font-bold text-ink">{{ tool.name }}</span>
-              <span class="font-mono text-[11.5px] text-ink-muted truncate">{{ tool.note }}</span>
-              <span class="min-[420px]:ml-auto text-[11.5px] text-ink-muted">
-                <span v-if="tool.owner === 'auto'" class="text-green font-bold">auto-approved</span>
-                <template v-else>owner: <b class="text-ink font-semibold">{{ tool.owner }}</b></template>
-              </span>
-            </div>
+            <span class="text-[14px] font-bold text-ink whitespace-nowrap">{{ tool.name }}</span>
+            <span class="font-mono text-[11.5px] text-ink-muted whitespace-nowrap">{{ tool.note }}</span>
+            <span class="ml-auto text-[11.5px] text-ink-muted whitespace-nowrap">
+              <span v-if="tool.owner === 'auto'" class="text-green font-bold">auto-approved</span>
+              <template v-else>owner: <b class="text-ink font-semibold">{{ tool.owner }}</b></template>
+            </span>
           </label>
         </div>
 
-        <div class="flex gap-2 mt-3.5 items-center flex-wrap">
+        <div class="flex gap-2 mt-3.5 items-center">
           <SlackBtn variant="purple">
             <template #icon><span>🍪</span></template>
             Request 4 cookies
           </SlackBtn>
           <SlackBtn>Cancel</SlackBtn>
-          <span class="min-[420px]:ml-auto text-[12px] text-ink-muted">4 selected · 3 owners pinged</span>
+          <span class="ml-auto text-[12px] text-ink-muted">4 selected · 3 owners pinged</span>
         </div>
       </BotCard>
       <EphemeralTag />
