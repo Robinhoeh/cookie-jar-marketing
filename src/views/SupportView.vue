@@ -1,16 +1,28 @@
+<script setup lang="ts">
+import { useI18n } from 'vue-i18n'
+import { supportEmail } from '@/config/links'
+
+const { t } = useI18n()
+
+const dashboardUrl = 'https://usecookiejar.com'
+</script>
+
 <template>
   <section class="bg-brand-cream min-h-[calc(100vh-4rem)]">
     <div class="mx-auto max-w-3xl px-4 min-[640px]:px-6 min-[1024px]:px-8 py-16 min-[640px]:py-24">
       <header class="text-center">
         <p class="font-mono text-xs font-bold text-brand-purple uppercase tracking-widest">
-          support
+          {{ t('support.eyebrow') }}
         </p>
         <h1 class="mt-3 font-display text-4xl min-[640px]:text-5xl text-brand-plum tracking-tight">
-          Need help?
+          {{ t('support.title') }}
         </h1>
         <p class="mt-5 text-base min-[640px]:text-lg text-ui-muted leading-relaxed">
-          We're a small team. A human reads every message. We respond within
-          <strong class="text-ui-text">2 business days</strong> — usually faster.
+          <i18n-t keypath="support.intro" tag="span">
+            <template #responseTime>
+              <strong class="text-ui-text">{{ t('support.responseTime') }}</strong>
+            </template>
+          </i18n-t>
         </p>
       </header>
 
@@ -33,15 +45,15 @@
             </svg>
           </div>
           <div class="flex-1">
-            <h2 class="font-display text-xl text-brand-plum">Email us</h2>
+            <h2 class="font-display text-xl text-brand-plum">{{ t('support.emailCard.title') }}</h2>
             <p class="mt-1 text-sm text-ui-muted">
-              Bug reports, billing questions, feature requests, security concerns — any of it.
+              {{ t('support.emailCard.body') }}
             </p>
             <a
-              href="mailto:robinvuewatson@gmail.com"
+              :href="`mailto:${supportEmail}`"
               class="mt-4 inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-brand-purple text-white text-sm font-medium hover:bg-brand-purple/90 transition-colors no-underline"
             >
-              robinvuewatson@gmail.com
+              {{ supportEmail }}
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
@@ -66,12 +78,12 @@
           to="/faq"
           class="block bg-ui-surface border border-ui-border rounded-xl p-5 hover:border-brand-purple/40 transition-colors no-underline"
         >
-          <h3 class="font-display text-base text-brand-plum">Faster answers</h3>
+          <h3 class="font-display text-base text-brand-plum">{{ t('support.fasterAnswers.title') }}</h3>
           <p class="mt-1.5 text-sm text-ui-muted">
-            Most questions are already answered in our FAQ.
+            {{ t('support.fasterAnswers.body') }}
           </p>
           <span class="mt-3 inline-flex items-center gap-1 text-sm font-medium text-brand-purple">
-            Browse FAQ
+            {{ t('support.fasterAnswers.cta') }}
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
@@ -90,16 +102,19 @@
         </RouterLink>
 
         <div class="bg-ui-surface border border-ui-border rounded-xl p-5">
-          <h3 class="font-display text-base text-brand-plum">Service status</h3>
+          <h3 class="font-display text-base text-brand-plum">{{ t('support.serviceStatus.title') }}</h3>
           <p class="mt-1.5 text-sm text-ui-muted">
-            Cookie Jar runs at <a href="https://usecookiejar.com" class="text-brand-purple hover:underline">usecookiejar.com</a>.
-            If something's broken, email us and we'll dig in.
+            <i18n-t keypath="support.serviceStatus.body" tag="span">
+              <template #url>
+                <a :href="dashboardUrl" class="text-brand-purple hover:underline">{{ dashboardUrl.replace('https://', '') }}</a>
+              </template>
+            </i18n-t>
           </p>
         </div>
       </div>
 
       <div class="mt-10 text-center text-sm text-ui-muted">
-        Already a customer? You can also reach us from inside the dashboard's feedback widget.
+        {{ t('support.footer') }}
       </div>
     </div>
   </section>

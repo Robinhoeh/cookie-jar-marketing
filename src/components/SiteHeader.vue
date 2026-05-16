@@ -1,15 +1,18 @@
 <script setup lang="ts">
-import { ref, watch } from 'vue'
+import { computed, ref, watch } from 'vue'
 import { useRoute } from 'vue-router'
+import { useI18n } from 'vue-i18n'
 import { signInUrl, addToSlackUrl } from '@/config/links'
+import SlackGlyph from '@/components/marks/SlackGlyph.vue'
 
 const route = useRoute()
+const { t } = useI18n()
 
-const navItems = [
-  { to: '/features', label: 'Features', name: 'features' },
-  { to: '/pricing', label: 'Pricing', name: 'pricing' },
-  { to: '/faq', label: 'FAQ', name: 'faq' },
-]
+const navItems = computed(() => [
+  { to: '/', label: t('header.nav.product'), name: 'home' },
+  { to: '/pricing', label: t('header.nav.pricing'), name: 'pricing' },
+  { to: '/privacy', label: t('header.nav.legal'), name: 'privacy' },
+])
 
 const mobileOpen = ref(false)
 
@@ -19,62 +22,63 @@ watch(() => route.fullPath, () => {
 </script>
 
 <template>
-  <header class="relative bg-ui-surface border-b border-ui-border">
-    <div class="mx-auto max-w-7xl px-4 min-[640px]:px-6 min-[1024px]:px-8">
-      <div class="flex items-center justify-between h-16 gap-4">
+  <header class="sticky top-0 z-40 backdrop-blur-md bg-cream-bg/80 border-b border-cream-border">
+    <div class="mx-auto max-w-[1280px] px-6 min-[1024px]:px-8">
+      <div class="flex items-center justify-between h-16 gap-6">
         <RouterLink
           to="/"
-          class="flex items-center gap-2 font-display text-2xl text-brand-purple tracking-tight no-underline shrink-0"
-          aria-label="Cookie Jar home"
+          class="flex items-center gap-2.5 no-underline shrink-0"
+          :aria-label="t('header.logoAlt')"
         >
           <img
-            src="/cookie-jar-logo.png"
+            src="/cookie-jar-icon-2048-slack-marketplace.png"
             alt=""
-            class="h-9 w-9 rounded-lg"
+            class="w-9 h-9 rounded-lg shrink-0"
             width="36"
             height="36"
           />
-          <span>Cookie Jar</span>
+          <span class="font-display font-bold text-[20px] text-ink tracking-tight">Cookie Jar</span>
         </RouterLink>
 
-        <ul class="hidden min-[768px]:flex gap-1 list-none m-0 p-0 flex-1 justify-center" role="list">
-          <li v-for="item in navItems" :key="item.name">
-            <RouterLink
-              :to="item.to"
-              class="inline-flex items-center px-3 py-2 text-sm font-medium rounded-lg transition-colors no-underline"
-              :class="
-                route.name === item.name
-                  ? 'bg-brand-purple/10 text-brand-purple'
-                  : 'text-ui-muted hover:text-ui-text hover:bg-brand-cream/50'
-              "
-              :aria-current="route.name === item.name ? 'page' : undefined"
-            >
-              {{ item.label }}
-            </RouterLink>
-          </li>
-        </ul>
+        <nav class="hidden min-[768px]:flex items-center gap-7 flex-1 justify-center" role="navigation">
+          <RouterLink
+            v-for="item in navItems"
+            :key="item.name"
+            :to="item.to"
+            class="relative inline-flex items-center text-[14px] font-semibold no-underline transition-colors"
+            :class="
+              route.name === item.name
+                ? 'text-ink after:content-[\'\'] after:absolute after:left-0 after:right-0 after:-bottom-[22px] after:h-[2px] after:bg-purple'
+                : 'text-ink-muted hover:text-ink'
+            "
+            :aria-current="route.name === item.name ? 'page' : undefined"
+          >
+            {{ item.label }}
+          </RouterLink>
+        </nav>
 
-        <div class="hidden min-[768px]:flex items-center gap-3 shrink-0">
+        <div class="hidden min-[768px]:flex items-center gap-4 shrink-0">
           <a
             :href="signInUrl"
-            class="inline-flex items-center px-3 py-2 text-sm font-medium rounded-lg text-ui-muted hover:text-ui-text hover:bg-brand-cream/50 transition-colors no-underline"
+            class="inline-flex items-center text-[14px] font-semibold text-ink-muted hover:text-ink transition-colors no-underline"
           >
-            Sign in
+            {{ t('header.signIn') }}
           </a>
           <a
             :href="addToSlackUrl"
-            class="inline-flex items-center px-4 py-2 text-sm font-semibold rounded-lg bg-brand-purple text-white hover:bg-brand-purple/90 transition-colors no-underline shadow-soft"
+            class="inline-flex items-center gap-2 px-4 py-2.5 rounded-[10px] bg-ink text-gold text-[14px] font-bold hover:brightness-110 transition no-underline"
           >
-            Add to Slack
+            <SlackGlyph :size="16" />
+            {{ t('header.addToSlack') }}
           </a>
         </div>
 
         <button
           type="button"
-          class="min-[768px]:hidden inline-flex items-center justify-center w-10 h-10 rounded-lg text-ui-muted hover:text-ui-text hover:bg-brand-cream/50 transition-colors border-0 bg-transparent cursor-pointer"
+          class="min-[768px]:hidden inline-flex items-center justify-center w-10 h-10 rounded-lg text-ink-muted hover:text-ink hover:bg-cream-tint transition-colors border-0 bg-transparent cursor-pointer"
           :aria-expanded="mobileOpen"
           aria-controls="mobile-nav-menu"
-          aria-label="Toggle navigation menu"
+          :aria-label="t('header.menuToggleAria')"
           @click="mobileOpen = !mobileOpen"
         >
           <svg
@@ -115,18 +119,18 @@ watch(() => route.fullPath, () => {
     <div
       v-show="mobileOpen"
       id="mobile-nav-menu"
-      class="absolute top-full left-0 right-0 z-30 min-[768px]:hidden bg-ui-surface border-b border-ui-border shadow-lg"
+      class="absolute top-full left-0 right-0 z-30 min-[768px]:hidden bg-cream-card border-b border-cream-border shadow-lg"
     >
-      <div class="mx-auto max-w-7xl px-4 min-[640px]:px-6 min-[1024px]:px-8 py-4">
+      <div class="mx-auto max-w-[1280px] px-6 py-4">
         <ul class="flex flex-col gap-1 list-none m-0 p-0" role="list">
           <li v-for="item in navItems" :key="item.name">
             <RouterLink
               :to="item.to"
-              class="flex items-center px-3 py-2 text-sm font-medium rounded-lg transition-colors no-underline"
+              class="flex items-center px-3 py-2 text-[14px] font-semibold rounded-lg transition-colors no-underline"
               :class="
                 route.name === item.name
-                  ? 'bg-brand-purple/10 text-brand-purple'
-                  : 'text-ui-muted hover:text-ui-text hover:bg-brand-cream/50'
+                  ? 'bg-purple-tint text-ink'
+                  : 'text-ink-muted hover:text-ink hover:bg-cream-tint'
               "
               :aria-current="route.name === item.name ? 'page' : undefined"
             >
@@ -135,18 +139,19 @@ watch(() => route.fullPath, () => {
           </li>
         </ul>
 
-        <div class="mt-3 pt-3 border-t border-ui-border flex flex-col gap-2">
+        <div class="mt-3 pt-3 border-t border-cream-border flex flex-col gap-2">
           <a
             :href="signInUrl"
-            class="flex items-center px-3 py-2 text-sm font-medium rounded-lg text-ui-muted hover:text-ui-text hover:bg-brand-cream/50 transition-colors no-underline"
+            class="flex items-center px-3 py-2 text-[14px] font-semibold rounded-lg text-ink-muted hover:text-ink hover:bg-cream-tint transition-colors no-underline"
           >
-            Sign in
+            {{ t('header.signIn') }}
           </a>
           <a
             :href="addToSlackUrl"
-            class="flex items-center justify-center px-3 py-2 text-sm font-semibold rounded-lg bg-brand-purple text-white hover:bg-brand-purple/90 transition-colors no-underline"
+            class="flex items-center justify-center gap-2 px-3 py-2.5 rounded-[10px] bg-ink text-gold text-[14px] font-bold hover:brightness-110 transition no-underline"
           >
-            Add to Slack
+            <SlackGlyph :size="16" />
+            {{ t('header.addToSlack') }}
           </a>
         </div>
       </div>
