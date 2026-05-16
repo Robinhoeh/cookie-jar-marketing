@@ -39,6 +39,101 @@
       "ctaPrimary": "Add to Slack",
       "ctaSecondary": "Sign in",
       "finePrint": "First month free · Card required · Slack admin install only"
+    },
+    "standout1": {
+      "tag": "standout 01",
+      "eyebrow": "/cookie like {'@'}sarah",
+      "titleLine1": "\"What tools does the new hire need?\"",
+      "titleLine2": "— solved.",
+      "bodyBefore": "Type ",
+      "bodyChip": "/cookie like {'@'}sarah",
+      "bodyAfter": " to see Sarah's tools as checkboxes. Tick the ones you want, hit Request. Owners get pinged for each tool — one click each to approve.",
+      "bullets": [
+        "See your teammate's shelf as a checklist",
+        "Batch the request, owners review one DM each",
+        "Auto-approved tools skip the queue entirely"
+      ]
+    },
+    "standout2": {
+      "tag": "standout 02",
+      "titleLine1": "Owners,",
+      "titleLine2": "not the CTO inbox.",
+      "body": "Assign one or more owners to each tool from the dashboard. When someone asks for Figma, the head of design gets the DM — not the CTO. Multi-owner committees supported; first click resolves the request, the others' DMs auto-update.",
+      "bullets": [
+        "Per-tool ownership, not per-team",
+        "Multi-owner fan-out — any one resolves it",
+        "Admins are a fallback, not the default"
+      ]
+    },
+    "standout3": {
+      "tag": "standout 03",
+      "titleLine1": "Slack-first.",
+      "titleLine2": "Not \"has a Slack notification.\"",
+      "bodyBefore": "Most access tools are web apps that send Slack pings. Cookie Jar is a Slack app that has a web dashboard. Type ",
+      "bodyChip": "/cookie",
+      "bodyAfter": " and the full command surface is right there — request, list, configure, audit. The dashboard is for monthly review, not daily ops.",
+      "bullets": [
+        "Zero new UI for employees to learn",
+        "Approve in Slack. Audit on the dashboard.",
+        "CTO opens the dashboard maybe once a month"
+      ]
+    },
+    "pipeline": {
+      "eyebrow": "what it actually does",
+      "headlineLine1": "The pipeline,",
+      "headlineLine2": "step by step.",
+      "legend": [
+        { "label": "Automated today" },
+        { "label": "Manual today" },
+        { "label": "On the Pro roadmap" }
+      ],
+      "steps": [
+        { "n": "01", "actor": "Employee · Slack", "title": "Types /cookie request github", "body": "Or /cookie like {'@'}sarah for a batch. Cookie Jar parses the command and validates the tool exists on the shelf." },
+        { "n": "02", "actor": "Cookie Jar", "title": "Routes to the tool owner", "body": "Looks up the owner(s) for that tool. Falls back to admins if none. Owner gets a Slack DM with [Approve] [Deny]." },
+        { "n": "03", "actor": "Owner · Slack", "title": "Clicks Approve", "body": "One click in the Slack DM. Multi-owner committees fan out — first click resolves, others auto-update." },
+        { "n": "04", "actor": "Owner · 3rd-party", "title": "Adds the seat in GitHub", "body": "30-second manual step in the actual tool. Owner is already in the headspace — they just decided yes." },
+        { "n": "05", "actor": "Cookie Jar", "title": "Logs grant, DMs requester", "body": "Audit log captures actor, target, tool, timestamp. Requester gets the outcome. Dashboard updates in real time." },
+        { "n": "06", "actor": "Admin · today", "title": "Offboarding — manual for now", "body": "When someone leaves, you check the dashboard for who has what, then ping each owner to revoke. Same shape as adding a seat: Cookie Jar gives you the picture, the actual click is still in the third-party tool." }
+      ],
+      "roadmapCalloutTagShort": "ON ROADMAP",
+      "roadmapCalloutTagFull": "ON THE ROADMAP",
+      "roadmapCalloutBody": "Auto-provisioning (step 04) and the full offboarding flow (step 06) ship as part of Pro, via n8n integrations to GitHub, Jira, and Figma first."
+    },
+    "problem": {
+      "eyebrow": "the problem",
+      "headlineLine1": "End the DM pile-up.",
+      "headlineLine2": "Keep the audit trail.",
+      "lede": "At 10 people, you ask in #general. At 30, you DM the founder. At 50, you've built a Notion page no one reads. Cookie Jar is what you use before you need a real IT department.",
+      "cards": [
+        {
+          "n": "01",
+          "tag": "the bottleneck",
+          "head": "Every access request becomes a CTO DM",
+          "body": "GitHub, Figma, AWS — they all funnel to the one person who installed the workspace three years ago.",
+          "quote": "\"hey can you add me to figma 🙏\""
+        },
+        {
+          "n": "02",
+          "tag": "day one chaos",
+          "head": "Onboarding takes days, not minutes",
+          "body": "New hire asks \"what tools do I need?\" Nobody knows the full list. They get half of it on day one and the rest over the next week.",
+          "quote": "\"wait, am I supposed to have Linear too?\""
+        },
+        {
+          "n": "03",
+          "tag": "the fog",
+          "head": "Nobody knows who has what",
+          "body": "Six months in, you can't name a single person who has GitHub admin. Or AWS root. Or Figma editor.",
+          "quote": "\"…who owns the Stripe seat again?\""
+        },
+        {
+          "n": "04",
+          "tag": "friday panic",
+          "head": "Offboarding is a guessing game",
+          "body": "Someone leaves on Friday. You spend the weekend hoping you remembered to revoke everything they had.",
+          "quote": "\"did anyone pull their AWS keys?\""
+        }
+      ]
     }
   },
   "features": {

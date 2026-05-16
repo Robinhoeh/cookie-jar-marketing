@@ -6,6 +6,11 @@ import CookieMeFrame from '@/components/frames/CookieMeFrame.vue'
 import CookieShelfFrame from '@/components/frames/CookieShelfFrame.vue'
 import CookieDidYouMeanFrame from '@/components/frames/CookieDidYouMeanFrame.vue'
 import ScrollableMock from '@/components/mobile/ScrollableMock.vue'
+import ProblemSection from '@/components/home/ProblemSection.vue'
+import PipelineSection from '@/components/home/PipelineSection.vue'
+import Standout1Section from '@/components/home/Standout1Section.vue'
+import Standout2Section from '@/components/home/Standout2Section.vue'
+import Standout3Section from '@/components/home/Standout3Section.vue'
 
 const { t } = useI18n()
 </script>
@@ -81,7 +86,7 @@ const { t } = useI18n()
             class="absolute top-0 -left-2.5 z-20"
             style="transform: rotate(-3deg); filter: drop-shadow(0 12px 24px rgba(45,30,47,0.18));"
           >
-            <ScrollableMock>
+            <ScrollableMock mode="swipe" hint="">
               <CookieMeFrame />
             </ScrollableMock>
           </div>
@@ -89,7 +94,7 @@ const { t } = useI18n()
             class="absolute top-6 -right-2.5 z-10"
             style="transform: rotate(5deg); filter: drop-shadow(0 12px 24px rgba(45,30,47,0.18)); opacity: 0.95;"
           >
-            <ScrollableMock>
+            <ScrollableMock mode="swipe" hint="">
               <CookieShelfFrame />
             </ScrollableMock>
           </div>
@@ -129,10 +134,25 @@ const { t } = useI18n()
   <!-- Spacing between hero and downstream sections so layered mocks don't overlap -->
   <div class="h-[64px] min-[640px]:h-[80px] min-[1024px]:h-[120px]" aria-hidden="true" />
 
-  <!-- Sections 2-14 will follow in Phase 4 + 5 -->
-  <section class="mx-auto max-w-3xl px-4 py-16 text-center">
+  <!-- Section 2: The Problem -->
+  <ProblemSection />
+
+  <!-- Section 3: How-it-works pipeline -->
+  <PipelineSection />
+
+  <!-- Section 4: Standout feature 1 — /cookie like @sarah -->
+  <Standout1Section />
+
+  <!-- Section 5: Standout feature 2 — Owners, not the CTO inbox -->
+  <Standout2Section />
+
+  <!-- Section 6: Standout feature 3 — Slack-first -->
+  <Standout3Section />
+
+  <!-- Sections 7-14 follow in subsequent Phase 4 + 5 steps -->
+  <section class="mx-auto max-w-3xl px-4 py-12 text-center">
     <p class="font-mono text-[11px] uppercase tracking-[1.4px] text-ink-muted">
-      Phase 3 sandbox · hero only. Phases 4 &amp; 5 add the rest.
+      More sections coming in the next steps.
     </p>
   </section>
 </template>

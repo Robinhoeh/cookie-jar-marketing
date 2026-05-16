@@ -1,25 +1,25 @@
 <script setup lang="ts">
-import CookieJarMark from '@/components/marks/CookieJarMark.vue'
-
 interface Props {
   ts?: string
-  avatarBg?: string
 }
 
 withDefaults(defineProps<Props>(), {
   ts: '10:42 AM',
-  avatarBg: '#B000FF',
 })
 </script>
 
 <template>
   <div class="flex gap-2.5 items-start py-1.5">
-    <div
-      class="w-9 h-9 rounded-md flex items-center justify-center shrink-0 relative"
-      :style="{ background: avatarBg }"
-    >
+    <div class="w-9 h-9 rounded-md overflow-hidden shrink-0 relative">
       <slot name="avatar">
-        <CookieJarMark :size="22" />
+        <!-- Default: Cookie Jar marketplace logo (matches the real Slack app icon) -->
+        <img
+          src="/cookie-jar-icon-2048-slack-marketplace.png"
+          alt=""
+          class="w-full h-full block"
+          width="36"
+          height="36"
+        />
       </slot>
     </div>
     <div class="flex-1 min-w-0">
