@@ -5,7 +5,6 @@ import SlackGlyph from '@/components/marks/SlackGlyph.vue'
 import CookieMeFrame from '@/components/frames/CookieMeFrame.vue'
 import CookieShelfFrame from '@/components/frames/CookieShelfFrame.vue'
 import CookieDidYouMeanFrame from '@/components/frames/CookieDidYouMeanFrame.vue'
-import ScrollableMock from '@/components/mobile/ScrollableMock.vue'
 import ProblemSection from '@/components/home/ProblemSection.vue'
 import PipelineSection from '@/components/home/PipelineSection.vue'
 import Standout1Section from '@/components/home/Standout1Section.vue'
@@ -14,6 +13,12 @@ import Standout3Section from '@/components/home/Standout3Section.vue'
 import OffboardingSection from '@/components/home/OffboardingSection.vue'
 import FeaturesGridSection from '@/components/home/FeaturesGridSection.vue'
 import RealSlackOutputSection from '@/components/home/RealSlackOutputSection.vue'
+import DashboardSection from '@/components/home/DashboardSection.vue'
+import SetupSection from '@/components/home/SetupSection.vue'
+import ProRoadmapSection from '@/components/home/ProRoadmapSection.vue'
+import TrustSection from '@/components/home/TrustSection.vue'
+import FaqSection from '@/components/home/FaqSection.vue'
+import FinalCtaSection from '@/components/home/FinalCtaSection.vue'
 
 const { t } = useI18n()
 </script>
@@ -25,7 +30,7 @@ const { t } = useI18n()
     style="background: radial-gradient(ellipse at top right, #FFE0CF 0%, #FFF3E6 55%);"
   >
     <div
-      class="mx-auto max-w-[1180px] px-4 min-[640px]:px-6 min-[1024px]:px-8 py-9 min-[640px]:py-16 min-[1024px]:py-24 min-[1024px]:grid min-[1024px]:grid-cols-[1.05fr_1fr] min-[1024px]:gap-[60px] min-[1024px]:items-center"
+      class="mx-auto max-w-[1180px] px-4 min-[640px]:px-6 min-[1024px]:px-8 pt-9 min-[640px]:pt-16 min-[1024px]:pt-24 pb-0 min-[1024px]:py-24 min-[1024px]:grid min-[1024px]:grid-cols-[1.05fr_1fr] min-[1024px]:gap-[60px] min-[1024px]:items-center"
     >
       <!-- Left: copy -->
       <div>
@@ -81,29 +86,27 @@ const { t } = useI18n()
       </div>
 
       <!-- Right: stacked Slack mocks -->
-      <!-- Mobile: 2 mocks layered with rotation. Desktop: 3 mocks scaled + overlapped. -->
+      <!-- Mobile: 2 mocks layered with rotation, bleed edge-to-edge.
+           Desktop: 3 mocks scaled + overlapped within the column. -->
       <div class="mt-9 min-[1024px]:mt-0 min-[1024px]:relative">
-        <!-- Mobile layout — first mock (CookieMeFrame) sits on top, opaque -->
-        <div class="relative h-[290px] min-[1024px]:hidden">
+        <!-- Mobile layout — front mock pinned left, back mock pinned right,
+             both bleeding to viewport edges via negative margins. -->
+        <div class="relative h-[290px] min-[1024px]:hidden -mx-4 min-[640px]:-mx-6">
           <div
-            class="absolute top-0 -left-2.5 z-20"
+            class="absolute top-0 left-0 z-20"
             style="transform: rotate(-3deg); filter: drop-shadow(0 12px 24px rgba(45,30,47,0.18));"
           >
-            <ScrollableMock mode="swipe" hint="">
-              <CookieMeFrame />
-            </ScrollableMock>
+            <CookieMeFrame />
           </div>
           <div
-            class="absolute top-6 -right-2.5 z-10"
+            class="absolute top-6 right-0 z-10"
             style="transform: rotate(5deg); filter: drop-shadow(0 12px 24px rgba(45,30,47,0.18)); opacity: 0.95;"
           >
-            <ScrollableMock mode="swipe" hint="">
-              <CookieShelfFrame />
-            </ScrollableMock>
+            <CookieShelfFrame />
           </div>
         </div>
 
-        <!-- Desktop layout — matches design exactly: scale 0.85 / 0.62 / 0.6, opacity 0.92 on back mocks -->
+        <!-- Desktop layout — matches design exactly: scale 0.85 / 0.62 / 0.6, opacity 0.92 on back mocks. -->
         <div class="hidden min-[1024px]:block relative">
           <div
             class="relative z-20"
@@ -134,9 +137,6 @@ const { t } = useI18n()
     </div>
   </section>
 
-  <!-- Spacing between hero and downstream sections so layered mocks don't overlap -->
-  <div class="h-[64px] min-[640px]:h-[80px] min-[1024px]:h-[120px]" aria-hidden="true" />
-
   <!-- Section 2: The Problem -->
   <ProblemSection />
 
@@ -161,10 +161,21 @@ const { t } = useI18n()
   <!-- Section 9: Real Slack output — 4 command demos -->
   <RealSlackOutputSection />
 
-  <!-- Sections 10-14 follow in subsequent Phase 4 + 5 steps -->
-  <section class="mx-auto max-w-3xl px-4 py-12 text-center">
-    <p class="font-mono text-[11px] uppercase tracking-[1.4px] text-ink-muted">
-      More sections coming in the next steps.
-    </p>
-  </section>
+  <!-- Section 10: Dashboard strip — the admin view -->
+  <DashboardSection />
+
+  <!-- Section 11: Five-minute setup — 3 numbered cards + CTA -->
+  <SetupSection />
+
+  <!-- Section 12: What's coming · Pro — 8 roadmap cards -->
+  <ProRoadmapSection />
+
+  <!-- Section 13: Trust & security — 7 checks + dark honesty card + sec FAQ accordion -->
+  <TrustSection />
+
+  <!-- Section 14: Product FAQ accordion -->
+  <FaqSection />
+
+  <!-- Section 15: Final CTA — centered, 🍪 emoji -->
+  <FinalCtaSection />
 </template>
