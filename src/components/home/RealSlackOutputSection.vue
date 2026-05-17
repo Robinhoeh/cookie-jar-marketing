@@ -129,7 +129,7 @@ onUnmounted(() => {
                 style="height: 320px; -webkit-overflow-scrolling: touch;"
               >
                 <div class="p-2.5">
-                  <ScrollableMock mode="fit">
+                  <ScrollableMock mode="fit" :natural-width="620">
                     <component :is="demo.component" />
                   </ScrollableMock>
                 </div>
@@ -175,7 +175,7 @@ onUnmounted(() => {
             </div>
           </div>
           <div class="mt-auto flex justify-center">
-            <ScrollableMock mode="fit">
+            <ScrollableMock mode="fit" :natural-width="620">
               <component :is="demo.component" />
             </ScrollableMock>
           </div>

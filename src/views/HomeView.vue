@@ -89,11 +89,13 @@ const { t } = useI18n()
       <!-- Mobile: 2 mocks layered with rotation, bleed edge-to-edge.
            Desktop: 3 mocks scaled + overlapped within the column. -->
       <div class="mt-9 min-[1024px]:mt-0 min-[1024px]:relative">
-        <!-- Mobile layout — front mock pinned left, back mock pinned right,
-             both bleeding to viewport edges via negative margins. -->
-        <div class="relative h-[290px] min-[1024px]:hidden -mx-4 min-[640px]:-mx-6">
+        <!-- Mobile layout — front mock shifted right so its rotated edge isn't clipped,
+             back mock bleeds to the right viewport edge.
+             Negative right margin lets the back card bleed; left edge stays inside the
+             cream background so it sits behind the cards instead of around them. -->
+        <div class="relative h-[290px] min-[1024px]:hidden -mr-4 min-[640px]:-mr-6">
           <div
-            class="absolute top-0 left-0 z-20"
+            class="absolute top-0 left-3 min-[400px]:left-6 z-20"
             style="transform: rotate(-3deg); filter: drop-shadow(0 12px 24px rgba(45,30,47,0.18));"
           >
             <CookieMeFrame />
@@ -136,6 +138,11 @@ const { t } = useI18n()
       </div>
     </div>
   </section>
+
+  <!-- Section break — dashed line marks hero → Problem transition on all viewports -->
+  <div class="mx-auto max-w-[1180px] px-4 min-[640px]:px-6 min-[1024px]:px-8">
+    <div class="border-t border-dashed border-cream-border-2" />
+  </div>
 
   <!-- Section 2: The Problem -->
   <ProblemSection />

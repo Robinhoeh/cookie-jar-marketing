@@ -72,7 +72,7 @@ const bullets = computed(() =>
 
       <!-- Frame column -->
       <div class="mt-7 min-[1024px]:mt-0 min-[1024px]:flex min-[1024px]:justify-center">
-        <ScrollableMock mode="fit">
+        <ScrollableMock mode="fit" :natural-width="620">
           <CookieTakeAllFrame />
         </ScrollableMock>
       </div>
