@@ -1,0 +1,388 @@
+{
+  "header": {
+    "logoAlt": "Cookie Jar home",
+    "nav": {
+      "product": "Product",
+      "pricing": "Pricing",
+      "legal": "Legal"
+    },
+    "signIn": "Sign in",
+    "addToSlack": "Add to Slack",
+    "menuToggleAria": "Toggle navigation menu"
+  },
+  "footer": {
+    "tagline": "Slack-native access management. Ask, approve, audit — without leaving the chat.",
+    "sections": {
+      "product": "Product",
+      "company": "Company",
+      "legal": "Legal"
+    },
+    "links": {
+      "product": "Product",
+      "pricing": "Pricing",
+      "privacy": "Privacy Policy",
+      "terms": "Terms of Service",
+      "support": "Support"
+    },
+    "copyright": "© {year} Cookie Jar. All rights reserved.",
+    "statusPill": "All systems operational"
+  },
+  "home": {
+    "hero": {
+      "statusPillMobile": "Slack-first · First month free",
+      "statusPillDesktop": "Slack-first access management · First month free",
+      "headlineLine1": "Cookie Jar —",
+      "headlineLine2": "because your CTO has",
+      "headlineLine3": "better things to do.",
+      "subheadline": "Hand off access, keep the visibility.",
+      "lede": "Tool owners approve in Slack. You see who has what, when you want.",
+      "ctaPrimary": "Add to Slack",
+      "ctaSecondary": "Sign in",
+      "finePrint": "First month free · Card required · Slack admin install only"
+    },
+    "standout1": {
+      "tag": "standout 01",
+      "eyebrow": "/cookie like {'@'}sarah",
+      "titleLine1": "\"What tools does the new hire need?\"",
+      "titleLine2": "— solved.",
+      "bodyBefore": "Type ",
+      "bodyChip": "/cookie like {'@'}sarah",
+      "bodyAfter": " to see Sarah's tools as checkboxes. Tick the ones you want, hit Request. Owners get pinged for each tool — one click each to approve.",
+      "bullets": [
+        "See your teammate's shelf as a checklist",
+        "Batch the request, owners review one DM each",
+        "Auto-approved tools skip the queue entirely"
+      ]
+    },
+    "standout2": {
+      "tag": "standout 02",
+      "titleLine1": "Owners,",
+      "titleLine2": "not the CTO inbox.",
+      "body": "Assign one or more owners to each tool from the dashboard. When someone asks for Figma, the head of design gets the DM — not the CTO. Multi-owner committees supported; first click resolves the request, the others' DMs auto-update.",
+      "bullets": [
+        "Per-tool ownership, not per-team",
+        "Multi-owner fan-out — any one resolves it",
+        "Admins are a fallback, not the default"
+      ]
+    },
+    "standout3": {
+      "tag": "standout 03",
+      "titleLine1": "Slack-first.",
+      "titleLine2": "Not \"has a Slack notification.\"",
+      "bodyBefore": "Most access tools are web apps that send Slack pings. Cookie Jar is a Slack app that has a web dashboard. Type ",
+      "bodyChip": "/cookie",
+      "bodyAfter": " and the full command surface is right there — request, list, configure, audit. The dashboard is for monthly review, not daily ops.",
+      "bullets": [
+        "Zero new UI for employees to learn",
+        "Approve in Slack. Audit on the dashboard.",
+        "CTO opens the dashboard maybe once a month"
+      ]
+    },
+    "proRoadmap": {
+      "eyebrow": "what's coming · pro",
+      "titleLine1": "We ship in public.",
+      "titleLine2": "Here's what's next.",
+      "ledeBefore": "All of these ship as part of Pro. Pro customers get them as they land — no add-on pricing, no per-feature upsell. ",
+      "ledeStrong": "Cost-per-seat tracking, quarterly access reviews, and smart audit search are built on request for Family Size.",
+      "comingSoonBadge": "coming soon",
+      "items": [
+        { "title": "/cookie requests", "body": "Read-heavy command for owners reviewing the queue. Comes back to Slack on Pro alongside warm functions." },
+        { "title": "Auto-approve rules", "body": "Pre-approve trusted patterns — per company, per team, per tool. Most-restrictive-wins precedence; safe-deny on errors." },
+        { "title": "Sub-second slash commands", "body": "Pro keeps Cookie Jar warm so /cookie never times out. No more 1–3s cold-start window." },
+        { "title": "Audit browser", "body": "Paginated, filterable table in the dashboard. Action-type colour coding, day grouping, CSV export." },
+        { "title": "Dashboard bulk revoke", "body": "Right now revoke happens in Slack. Bringing it to the dashboard with bulk select + filter." },
+        { "title": "Per-member overrides", "body": "Default by team, exceptions by person. \"Bob in Engineering, but no GitHub admin.\"" },
+        { "title": "Auto-provisioning", "body": "Skip the manual step. Cookie Jar adds the user in GitHub, Jira, Figma for you via n8n integrations." },
+        { "title": "Owner suggestions", "body": "\"{'@'}sarah-tech-lead has GitHub. Make her the owner?\" Suggested during install based on existing access patterns." }
+      ]
+    },
+    "trust": {
+      "eyebrow": "trust & security",
+      "titleLine1": "Built on industry-standard practices —",
+      "titleLine2": "not bolted on later.",
+      "items": [
+        { "title": "Encryption", "body": "TLS in transit, AES-256 at rest. Slack bot tokens are encrypted with rotation support." },
+        { "title": "Signed webhooks", "body": "Every request from Slack is verified with HMAC-SHA256 and a 5-minute replay window before we trust it." },
+        { "title": "Workspace isolation", "body": "Your data is enforced-isolated at the database layer. Admins only see their own org." },
+        { "title": "Role-based access", "body": "Every admin operation checks the operator's role on the workspace, every time." },
+        { "title": "Rate limiting", "body": "Public endpoints are rate-limited to prevent abuse." },
+        { "title": "Audit log on every action", "body": "Grant, revoke, approve, deny, admin promotion. Recorded with actor, target, tool, and timestamp." },
+        { "title": "OAuth installer gate", "body": "Only Slack workspace admins or owners can install Cookie Jar — preventing employees from auto-promoting themselves." }
+      ],
+      "honestyBadge": "honest",
+      "honestyTitle": "Compliance status",
+      "honestyBody": "Cookie Jar is not yet SOC 2 certified. We follow the practices that lead there and will pursue formal certification as customers require it. We don't make claims we can't back up."
+    },
+    "secFaq": {
+      "title": "Security questions buyers actually ask",
+      "items": [
+        {
+          "q": "Are you SOC 2 certified?",
+          "a": "Not yet. We follow the controls that lead to SOC 2 — encryption, signed webhooks, workspace isolation, RBAC, audit logging — and will pursue formal certification when a customer's procurement requires it. We won't claim a certification we don't hold."
+        },
+        {
+          "q": "Where is data stored?",
+          "a": "United States, on Google Cloud infrastructure. If you're in the EEA or UK, we rely on standard contractual clauses for cross-border transfer."
+        },
+        {
+          "q": "Can you sign a DPA?",
+          "a": "Yes. Email us and we'll send our standard DPA. For larger customers, we can negotiate."
+        },
+        {
+          "q": "Why do you need email permission from Slack?",
+          "a": "The users:read.email scope is used to map Slack users to Google SSO sign-ins on the dashboard. We don't use it for anything else."
+        },
+        {
+          "q": "What happens if Slack tokens leak?",
+          "a": "Tokens are encrypted at rest with rotation support. If a leak is suspected, admins can rotate by reinstalling the app — that revokes the old token immediately. We notify affected workspaces within 24 hours of confirming an incident involving your data."
+        },
+        {
+          "q": "Can a regular employee install Cookie Jar to give themselves admin?",
+          "a": "No. Cookie Jar checks at OAuth time — only Slack workspace admins or owners can install. Employee installs are rejected with a \"ask your workspace admin\" message."
+        }
+      ]
+    },
+    "faq": {
+      "eyebrow": "product faq",
+      "title": "The questions we actually get.",
+      "items": [
+        {
+          "q": "Does Cookie Jar actually grant access in GitHub, Jira, Figma — or does someone still need to do it manually?",
+          "a1": "Today, Cookie Jar runs the workflow — request, route, approve, audit. The owner who clicks \"Approve\" still goes to GitHub (or wherever) and adds the user themselves. It's a 30-second step they're already in the headspace for, since they just made the decision.",
+          "a2": "Auto-provisioning — actually creating the seat in the third-party tool when an approval lands — is in the Pro roadmap. Until that ships, Cookie Jar is the source of truth for who has been approved for what, and the manual provisioning step is honest and visible in the Slack flow."
+        },
+        {
+          "q": "Who can install Cookie Jar in our Slack workspace?",
+          "a1": "Only Slack workspace admins or owners. Cookie Jar checks at OAuth time — if the installer isn't a Slack admin, the install is rejected with a clear \"ask your workspace admin to install this for you\" message.",
+          "a2": "Whoever installs becomes the first Cookie Jar admin. They can promote other employees to admin from the dashboard (head of engineering, head of design, etc.). The installer doesn't have to manage everything alone."
+        },
+        {
+          "q": "How long does setup take?",
+          "a1": "About five minutes from \"Add to Slack\" to first access request flowing through Cookie Jar.",
+          "a2": "The flow: install → Cookie Jar pre-loads 24 common tools (GitHub, Jira, Figma, Notion, AWS, and more) → assign owners to the tools that have specific managers → done. Auto-approve rules, team channel mapping, and everything else can come later, configured from Slack with no dashboard required.",
+          "a3": "There's no HRIS to connect, no IdP to wire up, no agent to install on anyone's machine."
+        },
+        {
+          "q": "What if a tool we use isn't in your catalog?",
+          "a1": "Type /cookie shelf add notion (or whatever the tool is) and it's on the shelf. Cookie Jar doesn't care what the tool actually is — the catalog is just a list of names you decide on. Internal tools, niche SaaS, custom apps, all welcome. The owner-routing and approval flow work identically regardless of whether the tool is \"popular\" or one you invented internally."
+        },
+        {
+          "q": "Do you integrate with our HRIS or IdP?",
+          "a1": "No, and that's deliberate. Cookie Jar is built for 10–50-person startups that don't have a Workday, BambooHR, Okta, or AzureAD setup yet — exactly the segment that's too small for AccessOwl ($250/mo minimum) or Cakewalk (requires HRIS).",
+          "a2": "Slack is the source of truth for \"who works here.\" Cookie Jar runs on top of that. Once your team grows past the point where this makes sense, you'll graduate to a heavier tool — that's the right outcome."
+        },
+        {
+          "q": "What happens to our data if we uninstall Cookie Jar?",
+          "a1": "Uninstalling immediately removes our access credentials to your Slack workspace — we can't post or read anything in your Slack as soon as you click \"Remove.\" Your historical access records, audit log, and member profiles stay in Cookie Jar's database until you request deletion.",
+          "a2": "To delete everything, email us. Full details in our Privacy Policy."
+        }
+      ]
+    },
+    "finalCta": {
+      "emoji": "🍪",
+      "titleLine1": "Hand off access.",
+      "titleLine2": "Keep the visibility.",
+      "lede": "First month free. Five minutes to install.",
+      "ctaPrimary": "Add Cookie Jar to Slack",
+      "ctaSecondary": "See pricing"
+    },
+    "setup": {
+      "eyebrow": "five-minute setup",
+      "titleLine1": "Install,",
+      "titleLine2": "assign, done.",
+      "lede": "No IT ticket. No procurement call. One Slack admin clicks Add to Slack — three steps later, your team is requesting cookies.",
+      "steps": [
+        {
+          "n": "01",
+          "title": "Click Add to Slack",
+          "body": "Workspace admin or owner installs Cookie Jar in one click. 24 common tools are pre-loaded — GitHub, Figma, Jira, Notion, AWS, and 19 more."
+        },
+        {
+          "n": "02",
+          "title": "Assign owners to tools",
+          "body": "Open the Shelf in the dashboard. Add one or more owners per tool — head of design owns Figma, head of eng owns GitHub. Two minutes saves a hundred DMs."
+        },
+        {
+          "n": "03",
+          "title": "Your team grabs cookies",
+          "body": "Anyone types /cookie [tool] in Slack. Owners get a DM with Approve / Deny buttons. One click resolves the request. Audit log captures it."
+        }
+      ],
+      "ctaPrimary": "Add to Slack",
+      "ctaSecondary": "See pricing",
+      "finePrint": "First month free · Card required · Slack admin install only"
+    },
+    "dashboard": {
+      "eyebrow": "the admin view",
+      "titleLine1": "See who has what,",
+      "titleLine2": "when you want.",
+      "lede": "Person cards. Tool badges. Filter, search, audit. The dashboard is for monthly review — not daily ops. Your team lives in Slack; you check in here when you want the full picture.",
+      "bullets": [
+        "One row per person, badges for every tool they hold",
+        "Click any tool to see grant history, owner, and audit trail",
+        "Export to CSV for compliance reviews"
+      ]
+    },
+    "realSlackOutput": {
+      "eyebrow": "real slack output",
+      "titleLine1": "Every command,",
+      "titleLine2": "exactly as Slack shows it.",
+      "lede": "No stylized renders. These are the ephemeral messages Cookie Jar posts back when you run a command — same copy, same structure.",
+      "demos": [
+        {
+          "cmd": "/cookie [tool]",
+          "desc": "When a tool isn't on the shelf, Cookie Jar suggests the closest match and lists the full shelf."
+        },
+        {
+          "cmd": "/cookie me",
+          "desc": "Your jar. Every tool you have, who granted it, in one ephemeral list."
+        },
+        {
+          "cmd": "/cookie who {'@'}person",
+          "desc": "Anyone in your workspace can peek at a teammate's jar — basis for /cookie like."
+        },
+        {
+          "cmd": "/cookie shelf",
+          "desc": "Admin view of every cookie on the shelf, its approval policy, and the owner if there is one."
+        }
+      ]
+    },
+    "featuresGrid": {
+      "eyebrow": "what's in the jar today",
+      "titleLine1": "Everything below is shipping today.",
+      "titleLine2": "Included on Starter and Pro.",
+      "items": [
+        {
+          "title": "One-click approve / deny",
+          "body": "Owners get a Slack DM with [Approve] [Deny] buttons. One click resolves the request, the audit log captures the decision, and the requester gets DM'd the outcome."
+        },
+        {
+          "title": "/cookie like {'@'}teammate",
+          "body": "Clone a teammate's tool list in one command. Type /cookie like {'@'}sarah, see her tools as checkboxes, tick what the new hire needs, hit Request. Owners get pinged for each tool — one click each to approve."
+        },
+        {
+          "title": "24 tools pre-loaded",
+          "body": "Jira, GitHub, Figma, Notion, Linear, AWS, GCP, Datadog, Sentry, Stripe, and 14 more. Plus your own custom tools — up to 3 on Starter, up to 20 on Pro, unlimited on Family Size."
+        },
+        {
+          "title": "Real-time access overview",
+          "body": "Dashboard view of who has what across the org. Person cards with tool badges. Filter, search, see at a glance."
+        },
+        {
+          "title": "Audit log on every action",
+          "body": "Every grant, revoke, approve, deny, admin promotion — recorded with actor, target, tool, and timestamp. Browseable view in Slack and dashboard coming soon."
+        },
+        {
+          "title": "Onboarding DM for new joiners",
+          "body": "When someone joins your Slack workspace, Cookie Jar auto-DMs them with a starter command list. They self-serve from minute one."
+        }
+      ]
+    },
+    "offboarding": {
+      "badge": "Pro roadmap",
+      "eyebrow": "offboarding · coming soon",
+      "titleLine1": "When things don't work out,",
+      "titleLine2": "empty the jar in one command.",
+      "bodyBefore": "Someone leaving the team? Type ",
+      "bodyChip": "/cookie take {'@'}bob all",
+      "bodyAfter": " and Cookie Jar will list every tool Bob has, who owns each one, and what it costs you per month — and DM each owner a revoke checklist. No Notion page, no spreadsheet, no Friday-evening guesswork.",
+      "bullets": [
+        "Complete picture of someone's access in one place",
+        "Owners get a per-tool revoke checklist in Slack",
+        "Cost-per-seat surfaced so you know what you save"
+      ],
+      "honestyBefore": "Not yet built. Today, offboarding is manual — you check the dashboard for who has what and ask each owner to revoke (same shape as adding a seat). The ",
+      "honestyChip": "/cookie take",
+      "honestyAfter": " auto-flow ships on Pro alongside auto-provisioning."
+    },
+    "pipeline": {
+      "eyebrow": "what it actually does",
+      "headlineLine1": "The pipeline,",
+      "headlineLine2": "step by step.",
+      "legend": [
+        { "label": "Automated today" },
+        { "label": "Manual today" },
+        { "label": "On the Pro roadmap" }
+      ],
+      "steps": [
+        { "n": "01", "actor": "Employee · Slack", "title": "Types /cookie request github", "body": "Or /cookie like {'@'}sarah for a batch. Cookie Jar parses the command and validates the tool exists on the shelf." },
+        { "n": "02", "actor": "Cookie Jar", "title": "Routes to the tool owner", "body": "Looks up the owner(s) for that tool. Falls back to admins if none. Owner gets a Slack DM with [Approve] [Deny]." },
+        { "n": "03", "actor": "Owner · Slack", "title": "Clicks Approve", "body": "One click in the Slack DM. Multi-owner committees fan out — first click resolves, others auto-update." },
+        { "n": "04", "actor": "Owner · 3rd-party", "title": "Adds the seat in GitHub", "body": "30-second manual step in the actual tool. Owner is already in the headspace — they just decided yes." },
+        { "n": "05", "actor": "Cookie Jar", "title": "Logs grant, DMs requester", "body": "Audit log captures actor, target, tool, timestamp. Requester gets the outcome. Dashboard updates in real time." },
+        { "n": "06", "actor": "Admin · today", "title": "Offboarding — manual for now", "body": "When someone leaves, you check the dashboard for who has what, then ping each owner to revoke. Same shape as adding a seat: Cookie Jar gives you the picture, the actual click is still in the third-party tool." }
+      ],
+      "roadmapCalloutTagShort": "ON ROADMAP",
+      "roadmapCalloutTagFull": "ON THE ROADMAP",
+      "roadmapCalloutBody": "Auto-provisioning (step 04) and the full offboarding flow (step 06) ship as part of Pro, via n8n integrations to GitHub, Jira, and Figma first."
+    },
+    "problem": {
+      "eyebrow": "the problem",
+      "headlineLine1": "End the DM pile-up.",
+      "headlineLine2": "Keep the audit trail.",
+      "lede": "At 10 people, you ask in #general. At 30, you DM the founder. At 50, you've built a Notion page no one reads. Cookie Jar is what you use before you need a real IT department.",
+      "cards": [
+        {
+          "n": "01",
+          "tag": "the bottleneck",
+          "head": "Every access request becomes a CTO DM",
+          "body": "GitHub, Figma, AWS — they all funnel to the one person who installed the workspace three years ago.",
+          "quote": "\"hey can you add me to figma 🙏\""
+        },
+        {
+          "n": "02",
+          "tag": "day one chaos",
+          "head": "Onboarding takes days, not minutes",
+          "body": "New hire asks \"what tools do I need?\" Nobody knows the full list. They get half of it on day one and the rest over the next week.",
+          "quote": "\"wait, am I supposed to have Linear too?\""
+        },
+        {
+          "n": "03",
+          "tag": "the fog",
+          "head": "Nobody knows who has what",
+          "body": "Six months in, you can't name a single person who has GitHub admin. Or AWS root. Or Figma editor.",
+          "quote": "\"…who owns the Stripe seat again?\""
+        },
+        {
+          "n": "04",
+          "tag": "friday panic",
+          "head": "Offboarding is a guessing game",
+          "body": "Someone leaves on Friday. You spend the weekend hoping you remembered to revoke everything they had.",
+          "quote": "\"did anyone pull their AWS keys?\""
+        }
+      ]
+    }
+  },
+  "features": {
+    "title": "Features",
+    "comingSoon": "Walkthrough coming soon."
+  },
+  "pricing": {
+    "title": "Pricing",
+    "comingSoon": "Tier details coming soon."
+  },
+  "faq": {
+    "title": "FAQ",
+    "comingSoon": "Answers coming soon."
+  },
+  "support": {
+    "eyebrow": "support",
+    "title": "Need help?",
+    "intro": "We're a small team. A human reads every message. We respond within {responseTime} — usually faster.",
+    "responseTime": "2 business days",
+    "emailCard": {
+      "title": "Email us",
+      "body": "Bug reports, billing questions, feature requests, security concerns — any of it."
+    },
+    "fasterAnswers": {
+      "title": "Faster answers",
+      "body": "Most questions are already answered in our FAQ.",
+      "cta": "Browse FAQ"
+    },
+    "serviceStatus": {
+      "title": "Service status",
+      "body": "Cookie Jar runs at {url}. If something's broken, email us and we'll dig in."
+    },
+    "footer": "Already a customer? You can also reach us from inside the dashboard's feedback widget."
+  }
+}

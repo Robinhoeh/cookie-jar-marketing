@@ -3,3 +3,4 @@
 
 export const signInUrl = 'https://slack-access-app.web.app/signin'
 export const addToSlackUrl = 'https://slack-access-app.web.app/install'
+export const supportEmail = 'robinvuewatson@gmail.com'

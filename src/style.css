@@ -2,35 +2,72 @@
 @plugin "@tailwindcss/typography";
 
 @theme {
-  /* Typography */
+  /* Typography — design uses 4 families */
   --font-sans: "Inter", system-ui, sans-serif;
   --font-display: "Outfit", system-ui, sans-serif;
+  --font-slack: "Lato", "Inter", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", "Menlo", "Monaco", monospace;
 
-  /* Brand colors */
+  /* Cream palette — page + alt section bg, cards, borders */
+  --color-cream-bg: #FFF3E6;
+  --color-cream-tint: #FFFAF1;
+  --color-cream-card: #FFFFFF;
+  --color-cream-border: #EEDFD2;
+  --color-cream-border-2: #F0E6DA;
+
+  /* Ink — primary text + dark sections */
+  --color-ink: #2D1E2F;
+  --color-ink-muted: #6B5E6D;
+  --color-ink-faint: #8A7A8A;
+
+  /* Brand accents */
+  --color-purple: #B000FF;
+  --color-purple-tint: rgba(176, 0, 255, 0.10);
+  --color-coral: #FF6B6B;
+  --color-gold: #FFB703;
+  --color-green: #16A34A;
+  --color-green-deep: #0F7A38;
+  --color-blue: #1264A3;
+  --color-slack-purple: #3F0E40;
+
+  /* Legacy brand aliases — kept for in-progress code, prefer the new tokens above */
   --color-brand-purple: #B000FF;
   --color-brand-coral: #FF6B6B;
   --color-brand-gold: #FFB703;
   --color-brand-plum: #2D1E2F;
   --color-brand-cream: #FFF3E6;
 
-  /* UI colors */
+  /* Legacy ui-* aliases */
   --color-ui-bg: #FFF3E6;
   --color-ui-surface: #FFFFFF;
   --color-ui-text: #2D1E2F;
   --color-ui-muted: #6B5E6D;
   --color-ui-border: #EEDFD2;
 
-  /* State colors */
+  /* State colors (existing, kept) */
   --color-state-success: #16A34A;
   --color-state-warning: #F59E0B;
   --color-state-danger: #DC2626;
   --color-state-info: #2563EB;
 
-  /* Shadows */
+  /* Shadows — design's three lifts */
+  --shadow-card-lift: 0 1px 0 rgba(45, 30, 47, 0.04), 0 8px 24px -16px rgba(45, 30, 47, 0.18);
+  --shadow-slack: 0 6px 24px rgba(45, 30, 47, 0.10), 0 1px 3px rgba(45, 30, 47, 0.06);
+  --shadow-frame-float: drop-shadow(0 12px 24px rgba(45, 30, 47, 0.12));
+
+  /* Legacy shadow aliases */
   --shadow-soft: 0 4px 20px rgba(45, 30, 47, 0.08);
   --shadow-card: 0 2px 10px rgba(45, 30, 47, 0.06);
 
-  /* Border radius */
+  /* Radii from the design */
+  --radius-btn: 10px;
+  --radius-card: 16px;
+  --radius-card-sm: 14px;
+  --radius-pill: 999px;
+  --radius-slack-window: 10px;
+  --radius-slack-attach: 6px;
+
+  /* Legacy radius alias */
   --radius-xl2: 1rem;
 
   /* Animations */
@@ -52,14 +89,14 @@
 body {
   margin: 0;
   font-family: var(--font-sans);
-  background-color: var(--color-ui-bg);
-  color: var(--color-ui-text);
+  background-color: var(--color-cream-bg);
+  color: var(--color-ink);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 /* Focus styles for keyboard navigation */
 *:focus-visible {
-  outline: 2px solid var(--color-brand-purple);
+  outline: 2px solid var(--color-purple);
   outline-offset: 2px;
 }
