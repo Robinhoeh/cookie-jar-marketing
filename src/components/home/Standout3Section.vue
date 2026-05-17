@@ -29,7 +29,7 @@ const bullets = computed(() =>
     <template #frame>
       <!-- CookieHelpFrame is tall (~760px). Use fit mode so the whole menu is visible
            without requiring a long vertical scroll-into-image situation. -->
-      <ScrollableMock mode="fit">
+      <ScrollableMock mode="fit" :natural-width="620">
         <CookieHelpFrame />
       </ScrollableMock>
     </template>

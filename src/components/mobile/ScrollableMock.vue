@@ -14,12 +14,16 @@ interface Props {
   breakpoint?: number
   /** Optional hint text shown below the mock (swipe mode only). */
   hint?: string
+  /** Natural width (px) of the mock. The inner is forced to this width so
+   *  measurements reflect the mock's real size, not the constrained container. */
+  naturalWidth?: number
 }
 
 const props = withDefaults(defineProps<Props>(), {
   mode: 'fit',
   breakpoint: 1024,
   hint: '⟶ swipe to see more',
+  naturalWidth: 560,
 })
 
 // Measure container + inner for fit-mode scaling.
@@ -77,7 +81,10 @@ onUnmounted(() => {
 
 <template>
   <!-- FIT mode: scale the natural-size mock to fit the container width.
-       Above the breakpoint or when content fits, renders at natural size. -->
+       Above the breakpoint or when content fits, renders at natural size.
+       Inner is forced to naturalWidth so measurements reflect the real size,
+       not the constrained parent — otherwise scaling never kicks in and content
+       gets clipped instead of shrunk. -->
   <div
     v-if="mode === 'fit'"
     ref="wrapper"
@@ -87,8 +94,8 @@ onUnmounted(() => {
     <div
       ref="inner"
       :style="fitScale < 1
-        ? { transform: `scale(${fitScale})`, transformOrigin: 'top left', position: 'absolute', top: 0, left: 0 }
-        : {}"
+        ? { width: naturalWidth + 'px', transform: `scale(${fitScale})`, transformOrigin: 'top left', position: 'absolute', top: 0, left: 0 }
+        : { width: naturalWidth + 'px', maxWidth: '100%' }"
     >
       <slot />
     </div>
