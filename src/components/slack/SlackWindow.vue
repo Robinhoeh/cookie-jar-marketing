@@ -23,7 +23,7 @@ const composerLabel = props.dm
 
 <template>
   <div
-    class="bg-white rounded-[10px] overflow-hidden border border-[#E8E8EA] flex flex-col font-slack w-full"
+    class="group bg-white rounded-[10px] overflow-hidden border border-[#E8E8EA] flex flex-col font-slack w-full"
     :style="{
       maxWidth: maxWidth + 'px',
       boxShadow: '0 6px 24px rgba(45,30,47,0.10), 0 1px 3px rgba(45,30,47,0.06)',
@@ -35,6 +35,13 @@ const composerLabel = props.dm
       <span class="w-[11px] h-[11px] rounded-full bg-[#FEBC2E] shrink-0" />
       <span class="w-[11px] h-[11px] rounded-full bg-[#28C840] shrink-0" />
       <span class="ml-3 text-white/70 text-[12px] font-semibold whitespace-nowrap overflow-hidden text-ellipsis">acme · Slack</span>
+      <RouterLink
+        to="/pricing"
+        class="ml-auto inline-flex items-center gap-1 text-white/85 sm:text-white/45 hover:text-white text-[11px] font-semibold whitespace-nowrap no-underline transition-colors shrink-0 focus-visible:text-white focus-visible:outline-none"
+      >
+        Try it free
+        <span aria-hidden="true" class="transition-transform group-hover:translate-x-0.5">→</span>
+      </RouterLink>
     </div>
 
     <!-- Channel header -->

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, ref, watch } from 'vue'
+import { computed, onBeforeUnmount, ref, watch } from 'vue'
 import { useRoute } from 'vue-router'
 import { useI18n } from 'vue-i18n'
 import { signInUrl, addToSlackUrl } from '@/config/links'
@@ -23,6 +23,48 @@ watch(() => route.fullPath, () => {
 function closeDrawer() {
   mobileOpen.value = false
 }
+
+// CTA emphasis: bright after hero scrolls past on home, always-bright off-home.
+const heroVisible = ref(true)
+let heroObserver: IntersectionObserver | null = null
+
+watch(
+  () => route.name,
+  (name) => {
+    heroObserver?.disconnect()
+    heroObserver = null
+
+    if (name !== 'home') {
+      heroVisible.value = false
+      return
+    }
+
+    heroVisible.value = true
+
+    if (typeof window === 'undefined' || !('IntersectionObserver' in window)) {
+      return
+    }
+
+    requestAnimationFrame(() => {
+      const hero = document.getElementById('home-hero')
+      if (!hero) return
+      heroObserver = new IntersectionObserver(
+        ([entry]) => {
+          heroVisible.value = entry.isIntersecting
+        },
+        { threshold: 0, rootMargin: '-80px 0px 0px 0px' },
+      )
+      heroObserver.observe(hero)
+    })
+  },
+  { immediate: true },
+)
+
+onBeforeUnmount(() => {
+  heroObserver?.disconnect()
+})
+
+const emphasizeCta = computed(() => !heroVisible.value)
 </script>
 
 <template>
@@ -72,7 +114,8 @@ function closeDrawer() {
           </a>
           <a
             :href="addToSlackUrl"
-            class="inline-flex items-center gap-2 px-4 py-2.5 rounded-[10px] bg-ink text-gold text-[14px] font-bold hover:brightness-110 transition no-underline"
+            class="inline-flex items-center gap-2 px-4 py-2.5 rounded-[10px] bg-ink text-gold text-[14px] font-bold hover:brightness-110 transition-all no-underline"
+            :class="emphasizeCta ? 'shadow-[0_0_0_3px_rgba(255,183,3,0.35),0_8px_20px_-6px_rgba(45,30,47,0.45)] scale-[1.02]' : ''"
           >
             <SlackGlyph :size="16" />
             {{ t('header.addToSlack') }}
@@ -83,7 +126,8 @@ function closeDrawer() {
         <div class="flex min-[768px]:hidden items-center gap-2 shrink-0">
           <a
             :href="addToSlackUrl"
-            class="inline-flex items-center gap-1.5 px-3 py-2 rounded-lg bg-ink text-gold text-[12.5px] font-bold whitespace-nowrap no-underline"
+            class="inline-flex items-center gap-1.5 px-3 py-2 rounded-lg bg-ink text-gold text-[12.5px] font-bold whitespace-nowrap no-underline transition-shadow"
+            :class="emphasizeCta ? 'shadow-[0_0_0_2.5px_rgba(255,183,3,0.45)]' : ''"
           >
             <SlackGlyph :size="13" />
             Add

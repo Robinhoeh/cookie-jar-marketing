@@ -26,6 +26,7 @@ const { t } = useI18n()
 <template>
   <!-- HERO -->
   <section
+    id="home-hero"
     class="relative overflow-hidden"
     style="background: radial-gradient(ellipse at top right, #FFE0CF 0%, #FFF3E6 55%);"
   >

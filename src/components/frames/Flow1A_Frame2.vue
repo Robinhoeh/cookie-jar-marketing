@@ -35,7 +35,7 @@ const tools: Tool[] = [
           <label
             v-for="tool in tools"
             :key="tool.name"
-            class="flex items-center gap-2.5 px-2.5 py-2 bg-white rounded-lg border border-cream-border cursor-pointer flex-nowrap whitespace-nowrap"
+            class="flex items-center gap-x-2.5 gap-y-1 px-2.5 py-2 bg-white rounded-lg border border-cream-border cursor-pointer flex-wrap min-w-0"
           >
             <span
               class="w-[18px] h-[18px] rounded-[5px] flex items-center justify-center text-white text-[12px] font-extrabold shrink-0"
@@ -44,21 +44,21 @@ const tools: Tool[] = [
                 : { background: '#FFFFFF', border: '1.5px solid #C7BBC9' }"
             >{{ tool.checked ? '✓' : '' }}</span>
             <span class="text-[14px] font-bold text-ink whitespace-nowrap">{{ tool.name }}</span>
-            <span class="font-mono text-[11.5px] text-ink-muted whitespace-nowrap">{{ tool.note }}</span>
-            <span class="ml-auto text-[11.5px] text-ink-muted whitespace-nowrap">
+            <span class="font-mono text-[11.5px] text-ink-muted min-w-0 break-words">{{ tool.note }}</span>
+            <span class="sm:ml-auto text-[11.5px] text-ink-muted whitespace-nowrap basis-full sm:basis-auto">
               <span v-if="tool.owner === 'auto'" class="text-green font-bold">auto-approved</span>
               <template v-else>owner: <b class="text-ink font-semibold">{{ tool.owner }}</b></template>
             </span>
           </label>
         </div>
 
-        <div class="flex gap-2 mt-3.5 items-center">
+        <div class="flex gap-2 mt-3.5 items-center flex-wrap">
           <SlackBtn variant="purple">
             <template #icon><span>🍪</span></template>
             Request 4 cookies
           </SlackBtn>
           <SlackBtn>Cancel</SlackBtn>
-          <span class="ml-auto text-[12px] text-ink-muted">4 selected · 3 owners pinged</span>
+          <span class="sm:ml-auto text-[12px] text-ink-muted basis-full sm:basis-auto">4 selected · 3 owners pinged</span>
         </div>
       </BotCard>
       <EphemeralTag />
