@@ -16,18 +16,6 @@ export const router = createRouter({
       meta: { title: 'Pricing — Cookie Jar' },
     },
     {
-      path: '/faq',
-      name: 'faq',
-      component: () => import('@/views/FaqView.vue'),
-      meta: { title: 'FAQ — Cookie Jar' },
-    },
-    {
-      path: '/features',
-      name: 'features',
-      component: () => import('@/views/FeaturesView.vue'),
-      meta: { title: 'Features — Cookie Jar' },
-    },
-    {
       path: '/privacy',
       name: 'privacy',
       component: () => import('@/views/PrivacyView.vue'),
@@ -38,12 +26,6 @@ export const router = createRouter({
       name: 'terms',
       component: () => import('@/views/TermsView.vue'),
       meta: { title: 'Terms of Service — Cookie Jar' },
-    },
-    {
-      path: '/support',
-      name: 'support',
-      component: () => import('@/views/SupportView.vue'),
-      meta: { title: 'Support — Cookie Jar' },
     },
   ],
   scrollBehavior() {
