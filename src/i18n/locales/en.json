@@ -38,7 +38,7 @@
       "lede": "Tool owners approve in Slack. You see who has what, when you want.",
       "ctaPrimary": "Add to Slack",
       "ctaSecondary": "Sign in",
-      "finePrint": "First month free · Card required · Slack admin install only"
+      "finePrint": "30 days free · No card required · Slack admin install only"
     },
     "standout1": {
       "tag": "standout 01",
@@ -83,7 +83,7 @@
       "titleLine1": "We ship in public.",
       "titleLine2": "Here's what's next.",
       "ledeBefore": "All of these ship as part of Pro. Pro customers get them as they land — no add-on pricing, no per-feature upsell. ",
-      "ledeStrong": "Cost-per-seat tracking, quarterly access reviews, and smart audit search are built on request for Family Size.",
+      "ledeStrong": "Per-tool cost tracking, quarterly access reviews, and smart audit search are built on request for Family Size.",
       "comingSoonBadge": "coming soon",
       "items": [
         { "title": "/cookie requests", "body": "Read-heavy command for owners reviewing the queue. Comes back to Slack on Pro alongside warm functions." },
@@ -210,7 +210,7 @@
       ],
       "ctaPrimary": "Add to Slack",
       "ctaSecondary": "See pricing",
-      "finePrint": "First month free · Card required · Slack admin install only"
+      "finePrint": "30 days free · No card required · Slack admin install only"
     },
     "dashboard": {
       "eyebrow": "the admin view",
@@ -289,7 +289,7 @@
       "bullets": [
         "Complete picture of someone's access in one place",
         "Owners get a per-tool revoke checklist in Slack",
-        "Cost-per-seat surfaced so you know what you save"
+        "Per-tool cost surfaced so you know what you save"
       ],
       "honestyBefore": "Not yet built. Today, offboarding is manual — you check the dashboard for who has what and ask each owner to revoke (same shape as adding a seat). The ",
       "honestyChip": "/cookie take",
