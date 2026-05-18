@@ -353,36 +353,150 @@
       ]
     }
   },
-  "features": {
-    "title": "Features",
-    "comingSoon": "Walkthrough coming soon."
-  },
   "pricing": {
-    "title": "Pricing",
-    "comingSoon": "Tier details coming soon."
-  },
-  "faq": {
-    "title": "FAQ",
-    "comingSoon": "Answers coming soon."
-  },
-  "support": {
-    "eyebrow": "support",
-    "title": "Need help?",
-    "intro": "We're a small team. A human reads every message. We respond within {responseTime} — usually faster.",
-    "responseTime": "2 business days",
-    "emailCard": {
-      "title": "Email us",
-      "body": "Bug reports, billing questions, feature requests, security concerns — any of it."
+    "eyebrow": "pricing",
+    "titleLine1": "Costs less than a",
+    "titleLine2": "jar of cookies.",
+    "lede": "Two flat-rate paid tiers with a one-month free trial on either. $19/mo for the basics, $49/mo for the works, or Family Size for teams of 30+. No perpetual free tier.",
+    "toggle": {
+      "monthly": "Monthly",
+      "yearly": "Yearly",
+      "yearlyBadge": "2 months free",
+      "monthlyHint": "Switch to yearly anytime to save 2 months.",
+      "yearlyHint": "Pay 10 months upfront, get 12."
     },
-    "fasterAnswers": {
-      "title": "Faster answers",
-      "body": "Most questions are already answered in our FAQ.",
-      "cta": "Browse FAQ"
+    "tiers": {
+      "starter": {
+        "name": "Starter",
+        "tagline": "The basics. The floor. Everything you need to stop running access through DMs.",
+        "monthlyPrice": "19",
+        "yearlyPrice": "15.83",
+        "monthlyMeta": "First month free, no card required. Subscribe from the dashboard when you're ready.",
+        "yearlyMeta": "Billed annually at $190 (pay 10 months, get 12). First month free, no card required.",
+        "metaSub": "Flat per company up to 30 active members. Cancel anytime from the dashboard.",
+        "ctaLabel": "Start with Starter",
+        "featuredListTitle": "What's built today",
+        "featuresIncluded": [
+          "All slash commands (may cold-start, 1–3s)",
+          "Owner DMs + one-click approve / deny",
+          "Dashboard: Access Overview, Members, Catalog (read-only)",
+          "Audit log captured on every action (dashboard view coming soon)",
+          "24 pre-loaded tools + up to 3 of your own custom tools",
+          "/cookie like {'@'}teammate"
+        ],
+        "excludedListTitle": "Not included on Starter",
+        "featuresExcluded": [
+          "More than 3 custom tools",
+          "Priority support",
+          "Pro roadmap features as they ship (see Pro)"
+        ]
+      },
+      "pro": {
+        "name": "Pro",
+        "badge": "most popular",
+        "tagline": "The works. More room in the jar — bigger catalog, priority support, every new feature as it ships.",
+        "monthlyPrice": "49",
+        "yearlyPrice": "40.83",
+        "monthlyMeta": "First month free, no card required. Subscribe from the dashboard when you're ready.",
+        "yearlyMeta": "Billed annually at $490 (pay 10 months, get 12). First month free, no card required.",
+        "metaSub": "Flat per company up to 30 active members. Cancel anytime from the dashboard.",
+        "ctaLabel": "Choose Pro",
+        "includedListTitle": "Everything in Starter, plus",
+        "featuresIncluded": [
+          "Custom tools — up to 20 of your own beyond the 24 pre-loaded; swap freely as your stack changes",
+          "Priority support",
+          "Continuous updates — every new Pro feature included as it ships",
+          "Direct line to the product team to shape what we build next"
+        ],
+        "pipelineListTitle": "In the pipeline for Pro (coming soon)",
+        "featuresPipeline": [
+          "/cookie requests — read-heavy command for owners reviewing the queue",
+          "Auto-approve rules — pre-approve trusted patterns",
+          "Sub-second slash commands (warm functions)",
+          "Audit browser in the dashboard",
+          "Dashboard bulk revoke",
+          "Per-member access overrides",
+          "Auto-provisioning to GitHub, Jira, Figma",
+          "Owner suggestions during install"
+        ]
+      },
+      "familySize": {
+        "name": "Family Size",
+        "tagline": "Big batch. For teams whose size, stack, or compliance needs outgrow the standard tiers.",
+        "priceLabel": "Let's talk",
+        "meta": "Custom pricing — flat per company, scaled to your size and needs. Quick call, no slides.",
+        "ctaLabel": "Schedule a call",
+        "includedListTitle": "Everything in Pro, plus",
+        "featuresIncluded": [
+          "Teams over 30 active members — no member cap",
+          "Unlimited custom tools",
+          "SSO / SAML",
+          "Custom data residency",
+          "On-premise deployment options",
+          "Formal compliance evidence",
+          "Dedicated support contact",
+          "Custom pricing — flat per company, scaled to size + needs",
+          "Custom roadmap — Family Size feature requests jump to the front of the build queue"
+        ],
+        "onRequestListTitle": "Built on request for Family Size",
+        "featuresOnRequest": [
+          "Per-tool cost tracking",
+          "Quarterly access reviews with smart revoke suggestions",
+          "Smart audit search (natural-language queries)"
+        ]
+      }
     },
-    "serviceStatus": {
-      "title": "Service status",
-      "body": "Cookie Jar runs at {url}. If something's broken, email us and we'll dig in."
+    "flatNote": "Flat per company, not per seat. Starter and Pro handle teams up to 30 active members. Past 30, you're on Family Size.",
+    "howItWorks": {
+      "eyebrow": "how it works",
+      "title": "From install to billing, in plain English.",
+      "steps": [
+        { "n": "1", "head": "Install Cookie Jar in your Slack workspace", "body": "Installer becomes the first admin. We pull your email from Slack — no separate signup form." },
+        { "n": "2", "head": "Try it free for 30 days", "body": "Full Pro features unlocked during the trial. No card required to install — set up your shelf, assign owners, run /cookie." },
+        { "n": "3", "head": "Subscribe before day 31 to keep going", "body": "Pick Starter or Pro from the dashboard. We email you a Stripe payment link. Pay it and your plan is on." },
+        { "n": "4", "head": "Cancel anytime from the dashboard", "body": "Your access continues until the end of the billing period. No partial-month refunds." }
+      ],
+      "footnote": "We process payments through Stripe. We don't store card information."
     },
-    "footer": "Already a customer? You can also reach us from inside the dashboard's feedback widget."
+    "faq": {
+      "eyebrow": "pricing faq",
+      "title": "Money questions, answered.",
+      "items": [
+        {
+          "q": "Is there a free tier forever?",
+          "a": "No. Cookie Jar is a paid product after the first free month. Starter at $19 is intentionally low so smaller teams aren't priced out — but everyone who keeps using Cookie Jar pays something. This keeps us focused on actual customers, not free riders."
+        },
+        {
+          "q": "What if I want to cancel during the trial?",
+          "a": "Cancel any time from the dashboard. Since no card is required to install, there's nothing to charge — just stop using Cookie Jar or uninstall from Slack."
+        },
+        {
+          "q": "Can I switch tiers?",
+          "a": "Yes, anytime from the dashboard. Upgrades take effect immediately and we prorate the difference. Downgrades take effect at the end of the current billing period."
+        },
+        {
+          "q": "Does pricing scale with my team size?",
+          "a": "Starter and Pro are flat per company up to 30 active members — a 5-person team pays the same as a 30-person team. Past 30, you're on Family Size, which is custom-priced based on team size and what you need (SSO, residency, compliance evidence, etc.)."
+        },
+        {
+          "q": "How do you count team size?",
+          "a1": "Active human members of your Slack workspace — what Slack's users.list returns, minus bots, Slack apps, and deactivated accounts.",
+          "a2": "If your team grows past 30, reach out and we'll switch you to Family Size pricing."
+        },
+        {
+          "q": "What about refunds?",
+          "a": "Cancel anytime; you keep access through the end of the period you've paid for. We don't issue partial-month refunds, but if something's broken on our end, contact us and we'll make it right."
+        },
+        {
+          "q": "Why is Pro more than Starter?",
+          "a": "Pro is the upgrade lane: custom tools beyond the 24 pre-loaded (up to 20 of your own), priority support, and every new Pro feature included as it ships — /cookie requests, auto-approve rules, the audit browser, and warm functions are all on the Pro roadmap. Starter is the floor: everything you need to run access through Slack instead of DMs. If you only use the pre-loaded tool catalog and don't need the upcoming power features, Starter is enough."
+        }
+      ]
+    },
+    "biggerTeam": {
+      "title": "Bigger team? Bigger jar.",
+      "body": "30+ people, regulated industry, or need things like SSO/SAML, on-premise deployment, custom data residency, or formal compliance evidence? Schedule a Family Size call — we'll work it out together.",
+      "ctaLabel": "Schedule a call →"
+    }
   }
 }
