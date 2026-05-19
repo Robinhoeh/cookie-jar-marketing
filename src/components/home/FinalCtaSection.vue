@@ -50,6 +50,16 @@ const { t } = useI18n()
           {{ t('home.finalCta.ctaSecondary') }} <span class="text-purple">→</span>
         </RouterLink>
       </div>
+
+      <!-- Inline FAQ link -->
+      <div class="mt-5 min-[1024px]:mt-6">
+        <RouterLink
+          to="/faq"
+          class="inline-flex items-center gap-1 text-[14px] text-ink-muted no-underline hover:text-ink transition-colors"
+        >
+          Got questions? See FAQ &amp; security <span class="text-purple">→</span>
+        </RouterLink>
+      </div>
     </div>
   </section>
 </template>

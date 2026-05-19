@@ -4,33 +4,48 @@ import { useI18n } from 'vue-i18n'
 
 const { t, tm, rt } = useI18n()
 
-interface ProblemCard {
-  n: string
-  tag: string
-  head: string
+interface Milestone {
+  size: string
+  surface: string
+  headline: string
   body: string
   quote: string
 }
 
-// Accent colors aren't translation content — they live in code so they're consistent.
-const accents = ['#FF6B6B', '#B000FF', '#FFB703', '#16A34A']
+const accents = ['#16A34A', '#FFB703', '#FF6B6B', '#7C2D8F']
 
-const cards = computed(() =>
-  (tm('home.problem.cards') as ProblemCard[]).map((card, i) => ({
-    n: rt(card.n),
-    tag: rt(card.tag),
-    head: rt(card.head),
-    body: rt(card.body),
-    quote: rt(card.quote),
+const milestones = computed(() =>
+  (tm('home.problem.milestones') as Milestone[]).map((m, i) => ({
+    size: rt(m.size),
+    surface: rt(m.surface),
+    headline: rt(m.headline),
+    body: rt(m.body),
+    quote: rt(m.quote),
     accent: accents[i] ?? '#B000FF',
   })),
 )
+
+function hexToRgba(hex: string, alpha: number): string {
+  const cleanHex = hex.replace('#', '')
+  const r = parseInt(cleanHex.slice(0, 2), 16)
+  const g = parseInt(cleanHex.slice(2, 4), 16)
+  const b = parseInt(cleanHex.slice(4, 6), 16)
+  return `rgba(${r}, ${g}, ${b}, ${alpha})`
+}
+
+function cardBg(accent: string): string {
+  return hexToRgba(accent, 0.05)
+}
+
+function cardBorder(accent: string): string {
+  return hexToRgba(accent, 0.22)
+}
 </script>
 
 <template>
   <section class="bg-white">
     <div
-      class="mx-auto max-w-[980px] px-4 min-[640px]:px-6 min-[1024px]:px-8 py-14 min-[640px]:py-16 min-[1024px]:py-20"
+      class="mx-auto max-w-[1180px] px-4 min-[640px]:px-6 min-[1024px]:px-8 py-14 min-[640px]:py-16 min-[1024px]:py-24"
     >
       <!-- Eyebrow -->
       <div
@@ -56,64 +71,137 @@ const cards = computed(() =>
         {{ t('home.problem.lede') }}
       </p>
 
-      <!-- Cards: single column mobile, 2x2 grid desktop -->
-      <div
-        class="mt-7 min-[1024px]:mt-11 grid grid-cols-1 min-[768px]:grid-cols-2 gap-3.5 min-[1024px]:gap-[18px]"
-      >
-        <article
-          v-for="card in cards"
-          :key="card.n"
-          class="relative overflow-hidden rounded-[14px] min-[1024px]:rounded-[16px] border border-cream-border px-[18px] py-5 pb-[18px] min-[1024px]:px-[26px] min-[1024px]:py-[26px] min-[1024px]:pb-6"
-          style="background: #FFF3E6; box-shadow: 0 1px 0 rgba(45,30,47,0.04), 0 8px 24px -16px rgba(45,30,47,0.18);"
+      <!-- Timeline — Mobile (vertical) -->
+      <ol class="mt-9 min-[1024px]:hidden list-none m-0 p-0 relative">
+        <!-- Vertical axis line -->
+        <div
+          aria-hidden="true"
+          class="absolute left-[15px] top-2 bottom-2 w-px"
+          style="background: linear-gradient(to bottom, #16A34A 0%, #FFB703 33%, #FF6B6B 66%, #7C2D8F 100%);"
+        />
+        <li
+          v-for="(m, i) in milestones"
+          :key="m.size"
+          class="relative pl-10 pr-1"
+          :class="i === milestones.length - 1 ? '' : 'pb-7'"
         >
-          <!-- Top accent stripe -->
-          <div
-            class="absolute top-0 left-0 right-0 h-[3px] min-[1024px]:h-[4px]"
-            :style="{ background: card.accent }"
+          <!-- Dot on axis -->
+          <span
+            aria-hidden="true"
+            class="absolute left-[9px] top-1 w-[14px] h-[14px] rounded-full border-[3px] border-white"
+            :style="{ background: m.accent, boxShadow: `0 0 0 2px ${m.accent}` }"
           />
-
-          <!-- Watermark number -->
+          <!-- Card body with subtle progression tint -->
           <div
-            class="absolute top-3.5 right-[18px] min-[1024px]:top-[18px] min-[1024px]:right-[22px] font-mono font-bold pointer-events-none select-none text-[32px] min-[1024px]:text-[44px]"
-            :style="{ color: card.accent, opacity: 0.18, letterSpacing: '-1px', lineHeight: '1' }"
+            class="rounded-[12px] px-4 py-3.5 border"
+            :style="{ background: cardBg(m.accent), borderColor: cardBorder(m.accent) }"
           >
-            {{ card.n }}
+            <!-- Size label -->
+            <div
+              class="font-mono text-[11px] font-bold uppercase tracking-[1.2px]"
+              :style="{ color: m.accent }"
+            >
+              {{ m.size }} · {{ m.surface }}
+            </div>
+            <!-- Headline -->
+            <div class="font-display font-bold text-ink text-[17px] leading-[1.25] tracking-[-0.3px] mt-1.5">
+              {{ m.headline }}
+            </div>
+            <!-- Body -->
+            <p class="text-[14px] text-ink-muted leading-[1.55] mt-2 m-0">{{ m.body }}</p>
+            <!-- Quote -->
+            <p
+              class="mt-2.5 pt-2.5 font-mono italic text-[12px] leading-[1.5] m-0"
+              :style="{ borderTop: `1px dashed ${cardBorder(m.accent)}`, color: '#8A7A8A' }"
+            >
+              {{ m.quote }}
+            </p>
           </div>
+        </li>
+      </ol>
 
-          <!-- Tag -->
-          <div
-            class="inline-flex items-center gap-1.5 min-[1024px]:gap-[7px] font-mono text-[10px] min-[1024px]:text-[11px] font-bold uppercase tracking-[1.2px] mb-2.5 min-[1024px]:mb-3"
-            :style="{ color: card.accent }"
+      <!-- Timeline — Desktop (horizontal) -->
+      <!-- Grid: 4 columns × 3 rows. Row 2 is the axis row (fixed height).
+           Even-index cards live in row 1, odd-index in row 3 — alternating above/below. -->
+      <div
+        class="hidden min-[1024px]:grid mt-14 relative grid-cols-4 gap-6"
+        style="grid-template-rows: minmax(220px, auto) 32px minmax(220px, auto);"
+      >
+        <!-- Horizontal axis line: spans all 4 columns, sits centered on the dot row -->
+        <div
+          aria-hidden="true"
+          class="absolute left-0 right-0 h-[2px] rounded-full pointer-events-none"
+          style="
+            top: 50%;
+            transform: translateY(-50%);
+            background: linear-gradient(to right, #16A34A 0%, #FFB703 33%, #FF6B6B 66%, #7C2D8F 100%);
+          "
+        />
+
+        <template v-for="(m, i) in milestones" :key="m.size">
+          <!-- Card: row 1 if even-index, row 3 if odd-index. Aligned to the dot row edge. -->
+          <article
+            class="relative border rounded-[14px] px-5 py-5 self-end"
+            :class="i % 2 === 0 ? 'row-start-1 self-end' : 'row-start-3 self-start'"
+            :style="{
+              gridColumnStart: i + 1,
+              background: cardBg(m.accent),
+              borderColor: cardBorder(m.accent),
+              boxShadow: '0 1px 0 rgba(45,30,47,0.04), 0 12px 32px -20px rgba(45,30,47,0.22)',
+            }"
           >
+            <!-- Connector stub from card edge to dot row -->
             <span
-              class="w-[5px] h-[5px] min-[1024px]:w-1.5 min-[1024px]:h-1.5 rounded-full inline-block"
-              :style="{ background: card.accent }"
+              aria-hidden="true"
+              class="absolute left-1/2 w-[2px] rounded-full"
+              :style="{
+                background: m.accent,
+                height: '20px',
+                transform: 'translateX(-50%)',
+                top: i % 2 === 0 ? '100%' : 'auto',
+                bottom: i % 2 === 0 ? 'auto' : '100%',
+              }"
             />
-            {{ card.tag }}
-          </div>
+            <div
+              class="font-mono text-[11.5px] font-bold uppercase tracking-[1.3px]"
+              :style="{ color: m.accent }"
+            >
+              {{ m.size }}
+            </div>
+            <div class="font-mono text-[11px] text-ink-muted mt-1">
+              {{ m.surface }}
+            </div>
+            <div class="font-display font-bold text-ink text-[17px] leading-[1.25] tracking-[-0.2px] mt-3">
+              {{ m.headline }}
+            </div>
+            <p class="text-[13.5px] text-ink-muted leading-[1.5] mt-2 m-0">{{ m.body }}</p>
+            <p
+              class="mt-3 pt-3 font-mono italic text-[11.5px] leading-[1.5] m-0"
+              :style="{ borderTop: `1px dashed ${cardBorder(m.accent)}`, color: '#8A7A8A' }"
+            >
+              {{ m.quote }}
+            </p>
+          </article>
 
-          <!-- Headline -->
-          <div
-            class="font-display font-bold text-ink text-[18px] min-[1024px]:text-[22px] leading-[1.2] tracking-[-0.3px] min-[1024px]:tracking-[-0.4px]"
-            style="padding-right: 30px;"
-          >
-            {{ card.head }}
-          </div>
-
-          <!-- Body -->
-          <div class="text-[13.5px] min-[1024px]:text-[14.5px] text-ink-muted mt-2 min-[1024px]:mt-2.5 leading-[1.55]">
-            {{ card.body }}
-          </div>
-
-          <!-- Quote -->
-          <div
-            class="mt-3 min-[1024px]:mt-4 pt-2.5 min-[1024px]:pt-3.5 font-mono italic text-[11.5px] min-[1024px]:text-[12.5px] leading-[1.5]"
-            style="border-top: 1px dashed #E5D3C2; color: #8A7A8A;"
-          >
-            {{ card.quote }}
-          </div>
-        </article>
+          <!-- Dot: always in row 2, centered horizontally in its column -->
+          <span
+            aria-hidden="true"
+            class="row-start-2 justify-self-center self-center w-[20px] h-[20px] rounded-full border-[3px] border-white z-10"
+            :style="{
+              gridColumnStart: i + 1,
+              background: m.accent,
+              boxShadow: `0 0 0 3px ${m.accent}`,
+            }"
+          />
+        </template>
       </div>
+
+      <!-- Outro line -->
+      <p
+        class="mt-10 min-[1024px]:mt-14 text-center text-[15px] min-[1024px]:text-[17px] font-display font-semibold text-ink max-w-[600px] mx-auto"
+      >
+        {{ t('home.problem.outro') }}
+      </p>
     </div>
   </section>
 </template>
