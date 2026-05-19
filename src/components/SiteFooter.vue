@@ -23,6 +23,8 @@ const columns = computed<FooterColumn[]>(() => [
     links: [
       { label: t('footer.links.product'), to: '/' },
       { label: t('footer.links.pricing'), to: '/pricing' },
+      { label: t('footer.links.howItWorks'), to: '/how-it-works' },
+      { label: t('footer.links.faq'), to: '/faq' },
     ],
   },
   {

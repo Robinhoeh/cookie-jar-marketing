@@ -4,6 +4,7 @@
     "nav": {
       "product": "Product",
       "pricing": "Pricing",
+      "faq": "FAQ",
       "legal": "Legal"
     },
     "signIn": "Sign in",
@@ -20,6 +21,8 @@
     "links": {
       "product": "Product",
       "pricing": "Pricing",
+      "howItWorks": "How it works",
+      "faq": "FAQ & Security",
       "privacy": "Privacy Policy",
       "terms": "Terms of Service",
       "support": "Support"
@@ -31,11 +34,11 @@
     "hero": {
       "statusPillMobile": "Slack-first · First month free",
       "statusPillDesktop": "Slack-first access management · First month free",
-      "headlineLine1": "Cookie Jar —",
-      "headlineLine2": "because your CTO has",
-      "headlineLine3": "better things to do.",
-      "subheadline": "Hand off access, keep the visibility.",
-      "lede": "Tool owners approve in Slack. You see who has what, when you want.",
+      "headlineLine1": "Slack-first access management",
+      "headlineLine2": "for small teams.",
+      "headlineLine3": "",
+      "subheadline": "Employees request tools with /cookie. Owners approve in Slack.",
+      "lede": "You see who has what, when you want — no DM pile-up, no spreadsheet.",
       "ctaPrimary": "Add to Slack",
       "ctaSecondary": "Sign in",
       "finePrint": "30 days free · No card required · Slack admin install only"
@@ -320,34 +323,35 @@
       "eyebrow": "the problem",
       "headlineLine1": "End the DM pile-up.",
       "headlineLine2": "Keep the audit trail.",
-      "lede": "At 10 people, you ask in #general. At 30, you DM the founder. At 50, you've built a Notion page no one reads. Cookie Jar is what you use before you need a real IT department.",
-      "cards": [
+      "lede": "Access management evolves with team size — and most teams end up cobbling it together. Cookie Jar is what you use before you need a real IT department.",
+      "outro": "Cookie Jar replaces all four with one Slack-native flow.",
+      "milestones": [
         {
-          "n": "01",
-          "tag": "the bottleneck",
-          "head": "Every access request becomes a CTO DM",
-          "body": "GitHub, Figma, AWS — they all funnel to the one person who installed the workspace three years ago.",
+          "size": "10 people",
+          "surface": "#general",
+          "headline": "\"Hey, can someone add me to Figma?\"",
+          "body": "Access requests live in a shared channel. Cute now — invisible later.",
           "quote": "\"hey can you add me to figma 🙏\""
         },
         {
-          "n": "02",
-          "tag": "day one chaos",
-          "head": "Onboarding takes days, not minutes",
-          "body": "New hire asks \"what tools do I need?\" Nobody knows the full list. They get half of it on day one and the rest over the next week.",
-          "quote": "\"wait, am I supposed to have Linear too?\""
+          "size": "30 people",
+          "surface": "DM the founder",
+          "headline": "Every request funnels to one person",
+          "body": "GitHub, AWS, Notion — they all go to whoever installed the workspace. The CTO becomes a human ticketing system.",
+          "quote": "\"sorry to bug you again — Linear access?\""
         },
         {
-          "n": "03",
-          "tag": "the fog",
-          "head": "Nobody knows who has what",
-          "body": "Six months in, you can't name a single person who has GitHub admin. Or AWS root. Or Figma editor.",
+          "size": "50 people",
+          "surface": "Notion page no one reads",
+          "headline": "Nobody knows who has what",
+          "body": "Someone makes a spreadsheet. It goes stale in a week. Six months in, you can't name who has GitHub admin or AWS root.",
           "quote": "\"…who owns the Stripe seat again?\""
         },
         {
-          "n": "04",
-          "tag": "friday panic",
-          "head": "Offboarding is a guessing game",
-          "body": "Someone leaves on Friday. You spend the weekend hoping you remembered to revoke everything they had.",
+          "size": "100 people",
+          "surface": "Real IT department",
+          "headline": "You hire someone to fix this",
+          "body": "Or onboarding takes a week. Or offboarding becomes a Friday-night guessing game about which keys to rotate.",
           "quote": "\"did anyone pull their AWS keys?\""
         }
       ]

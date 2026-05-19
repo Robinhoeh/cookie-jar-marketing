@@ -11,7 +11,7 @@ const { t } = useI18n()
 const navItems = computed(() => [
   { to: '/', label: t('header.nav.product'), name: 'home' },
   { to: '/pricing', label: t('header.nav.pricing'), name: 'pricing' },
-  { to: '/privacy', label: t('header.nav.legal'), name: 'privacy' },
+  { to: '/faq', label: t('header.nav.faq'), name: 'faq' },
 ])
 
 const mobileOpen = ref(false)

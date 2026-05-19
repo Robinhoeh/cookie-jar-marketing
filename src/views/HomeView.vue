@@ -7,17 +7,6 @@ import CookieShelfFrame from '@/components/frames/CookieShelfFrame.vue'
 import CookieDidYouMeanFrame from '@/components/frames/CookieDidYouMeanFrame.vue'
 import ProblemSection from '@/components/home/ProblemSection.vue'
 import PipelineSection from '@/components/home/PipelineSection.vue'
-import Standout1Section from '@/components/home/Standout1Section.vue'
-import Standout2Section from '@/components/home/Standout2Section.vue'
-import Standout3Section from '@/components/home/Standout3Section.vue'
-import OffboardingSection from '@/components/home/OffboardingSection.vue'
-import FeaturesGridSection from '@/components/home/FeaturesGridSection.vue'
-import RealSlackOutputSection from '@/components/home/RealSlackOutputSection.vue'
-import DashboardSection from '@/components/home/DashboardSection.vue'
-import SetupSection from '@/components/home/SetupSection.vue'
-import ProRoadmapSection from '@/components/home/ProRoadmapSection.vue'
-import TrustSection from '@/components/home/TrustSection.vue'
-import FaqSection from '@/components/home/FaqSection.vue'
 import FinalCtaSection from '@/components/home/FinalCtaSection.vue'
 
 const { t } = useI18n()
@@ -47,8 +36,7 @@ const { t } = useI18n()
           class="font-display font-bold m-0 text-ink text-[44px] leading-[1] tracking-[-1.3px] min-[1024px]:text-[76px] min-[1024px]:leading-[0.98] min-[1024px]:tracking-[-1.6px]"
         >
           {{ t('home.hero.headlineLine1') }}<br />
-          {{ t('home.hero.headlineLine2') }}<br />
-          <span class="text-purple">{{ t('home.hero.headlineLine3') }}</span>
+          <span class="text-purple">{{ t('home.hero.headlineLine2') }}</span>
         </h1>
 
         <p
@@ -151,39 +139,6 @@ const { t } = useI18n()
   <!-- Section 3: How-it-works pipeline -->
   <PipelineSection />
 
-  <!-- Section 4: Standout feature 1 — /cookie like @sarah -->
-  <Standout1Section />
-
-  <!-- Section 5: Standout feature 2 — Owners, not the CTO inbox -->
-  <Standout2Section />
-
-  <!-- Section 6: Standout feature 3 — Slack-first -->
-  <Standout3Section />
-
-  <!-- Section 7: Offboarding (Pro roadmap, dark plum) -->
-  <OffboardingSection />
-
-  <!-- Section 8: Features grid — what's in the jar today (dark continuation) -->
-  <FeaturesGridSection />
-
-  <!-- Section 9: Real Slack output — 4 command demos -->
-  <RealSlackOutputSection />
-
-  <!-- Section 10: Dashboard strip — the admin view -->
-  <DashboardSection />
-
-  <!-- Section 11: Five-minute setup — 3 numbered cards + CTA -->
-  <SetupSection />
-
-  <!-- Section 12: What's coming · Pro — 8 roadmap cards -->
-  <ProRoadmapSection />
-
-  <!-- Section 13: Trust & security — 7 checks + dark honesty card + sec FAQ accordion -->
-  <TrustSection />
-
-  <!-- Section 14: Product FAQ accordion -->
-  <FaqSection />
-
-  <!-- Section 15: Final CTA — centered, 🍪 emoji -->
+  <!-- Section 4: Final CTA -->
   <FinalCtaSection />
 </template>
