@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { useI18n } from 'vue-i18n'
-import { addToSlackUrl, signInUrl } from '@/config/links'
+import { addToSlackUrl } from '@/config/links'
 import SlackGlyph from '@/components/marks/SlackGlyph.vue'
 import CookieMeFrame from '@/components/frames/CookieMeFrame.vue'
 import CookieShelfFrame from '@/components/frames/CookieShelfFrame.vue'
@@ -60,12 +60,6 @@ const { t } = useI18n()
           >
             <SlackGlyph :size="18" />
             {{ t('home.hero.ctaPrimary') }}
-          </a>
-          <a
-            :href="signInUrl"
-            class="inline-flex items-center justify-center gap-1.5 px-5 py-3.5 rounded-[12px] border border-cream-border bg-white text-ink text-[15px] font-semibold no-underline min-[1024px]:border-0 min-[1024px]:bg-transparent min-[1024px]:px-1 min-[1024px]:py-3.5"
-          >
-            {{ t('home.hero.ctaSecondary') }} <span class="text-purple">→</span>
           </a>
         </div>
 

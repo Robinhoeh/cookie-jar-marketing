@@ -7,7 +7,6 @@
       "faq": "FAQ",
       "legal": "Legal"
     },
-    "signIn": "Sign in",
     "addToSlack": "Add to Slack",
     "menuToggleAria": "Toggle navigation menu"
   },
@@ -40,7 +39,6 @@
       "subheadline": "Employees request tools with /cookie. Owners approve in Slack.",
       "lede": "You see who has what, when you want. No DM pile-up, no spreadsheet.",
       "ctaPrimary": "Add to Slack",
-      "ctaSecondary": "Sign in",
       "finePrint": "30 days free · No card required · Slack admin install only"
     },
     "standout1": {
