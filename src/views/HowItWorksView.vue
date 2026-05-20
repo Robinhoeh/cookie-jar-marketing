@@ -2,6 +2,7 @@
 import { addToSlackUrl } from '@/config/links'
 import { RouterLink } from 'vue-router'
 import SlackGlyph from '@/components/marks/SlackGlyph.vue'
+import VideoSection from '@/components/home/VideoSection.vue'
 import SetupSection from '@/components/home/SetupSection.vue'
 import PipelineSection from '@/components/home/PipelineSection.vue'
 import DashboardSection from '@/components/home/DashboardSection.vue'
@@ -30,6 +31,9 @@ import DashboardSection from '@/components/home/DashboardSection.vue'
       </p>
     </div>
   </section>
+
+  <!-- 60-second walkthrough -->
+  <VideoSection />
 
   <!-- Step 1: Setup -->
   <SetupSection />
