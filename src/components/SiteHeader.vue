@@ -2,7 +2,7 @@
 import { computed, onBeforeUnmount, ref, watch } from 'vue'
 import { useRoute } from 'vue-router'
 import { useI18n } from 'vue-i18n'
-import { signInUrl, addToSlackUrl } from '@/config/links'
+import { addToSlackUrl } from '@/config/links'
 import SlackGlyph from '@/components/marks/SlackGlyph.vue'
 
 const route = useRoute()
@@ -107,12 +107,6 @@ const emphasizeCta = computed(() => !heroVisible.value)
         <!-- Desktop CTAs -->
         <div class="hidden min-[768px]:flex items-center gap-4 shrink-0">
           <a
-            :href="signInUrl"
-            class="inline-flex items-center text-[14px] font-semibold text-ink-muted hover:text-ink transition-colors no-underline"
-          >
-            {{ t('header.signIn') }}
-          </a>
-          <a
             :href="addToSlackUrl"
             class="inline-flex items-center gap-2 px-4 py-2.5 rounded-[10px] bg-ink text-gold text-[14px] font-bold hover:brightness-110 transition-all no-underline"
             :class="emphasizeCta ? 'shadow-[0_0_0_3px_rgba(255,183,3,0.35),0_8px_20px_-6px_rgba(45,30,47,0.45)] scale-[1.02]' : ''"
@@ -192,15 +186,6 @@ const emphasizeCta = computed(() => !heroVisible.value)
           <span>{{ item.label }}</span>
           <span class="text-base" :class="route.name === item.name ? 'text-purple' : 'text-[#C8BCC0]'">→</span>
         </RouterLink>
-        <div class="h-px bg-cream-border my-2.5" />
-        <a
-          :href="signInUrl"
-          class="flex items-center justify-between px-1 py-3.5 text-[19px] font-display font-semibold text-ink-muted no-underline"
-          @click="closeDrawer"
-        >
-          <span>{{ t('header.signIn') }}</span>
-          <span class="text-base text-[#C8BCC0]">→</span>
-        </a>
       </div>
     </div>
   </Teleport>
