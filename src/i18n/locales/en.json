@@ -298,24 +298,25 @@
     },
     "pipeline": {
       "eyebrow": "what it actually does",
-      "headlineLine1": "The pipeline,",
-      "headlineLine2": "step by step.",
+      "headlineLine1": "How a request flows,",
+      "headlineLine2": "start to finish.",
       "legend": [
         { "label": "Automated today" },
         { "label": "Manual today" },
         { "label": "On the Pro roadmap" }
       ],
       "steps": [
-        { "n": "01", "actor": "Employee · Slack", "title": "Types /cookie request github", "body": "Or /cookie like {'@'}sarah for a batch. Cookie Jar parses the command and validates the tool exists on the shelf." },
-        { "n": "02", "actor": "Cookie Jar", "title": "Routes to the tool owner", "body": "Looks up the owner(s) for that tool. Falls back to admins if none. Owner gets a Slack DM with [Approve] [Deny]." },
-        { "n": "03", "actor": "Owner · Slack", "title": "Clicks Approve", "body": "One click in the Slack DM. Multi-owner committees fan out — first click resolves, others auto-update." },
-        { "n": "04", "actor": "Owner · 3rd-party", "title": "Adds the seat in GitHub", "body": "30-second manual step in the actual tool. Owner is already in the headspace, they just decided yes." },
-        { "n": "05", "actor": "Cookie Jar", "title": "Logs grant, DMs requester", "body": "Audit log captures actor, target, tool, timestamp. Requester gets the outcome. Dashboard updates in real time." },
-        { "n": "06", "actor": "Admin · today", "title": "Offboarding — manual for now", "body": "When someone leaves, you check the dashboard for who has what, then ping each owner to revoke. Same shape as adding a seat: Cookie Jar gives you the picture, the actual click is still in the third-party tool." }
+        { "n": "01", "actor": "Employee", "title": "An employee asks for access in Slack", "body": "They type /cookie request github (or /cookie like {'@'}sarah for a batch). Cookie Jar parses the command and confirms the tool exists on the shelf." },
+        { "n": "02", "actor": "Cookie Jar", "title": "Cookie Jar pings the right owner", "body": "It looks up the owner(s) for that tool and DMs them with [Approve] [Deny] buttons. Falls back to admins if no owner is assigned." },
+        { "n": "03", "actor": "Owner", "title": "The owner clicks Approve in their DM", "body": "One click resolves the request. Multi-owner committees fan out — whoever clicks first wins, the others' DMs auto-update so nobody double-approves." },
+        { "n": "04", "actor": "Owner", "title": "The owner adds the seat in the actual tool", "body": "A 30-second manual step in GitHub, Figma, or wherever. The owner is already in the headspace — they just decided yes." },
+        { "n": "05", "actor": "Cookie Jar", "title": "Cookie Jar logs it and notifies the requester", "body": "The audit log captures actor, target, tool, and timestamp. The requester gets the outcome in Slack. The dashboard updates in real time." }
       ],
       "roadmapCalloutTagShort": "ON ROADMAP",
       "roadmapCalloutTagFull": "ON THE ROADMAP",
-      "roadmapCalloutBody": "Auto-provisioning (step 04) and the full offboarding flow (step 06) ship as part of Pro, via n8n integrations to GitHub, Jira, and Figma first."
+      "roadmapCalloutBody": "Auto-provisioning (step 04) ships as part of Pro, via n8n integrations to GitHub, Jira, and Figma first.",
+      "offboardingTitle": "Offboarding works the same way, in reverse.",
+      "offboardingBody": "When someone leaves, the admin opens the dashboard to see what they have, then pings each owner to revoke. Same shape as granting a seat: Cookie Jar gives you the picture, the click is still in the third-party tool. Auto-revoke is on the Pro roadmap."
     },
     "problem": {
       "eyebrow": "the problem",
