@@ -17,7 +17,7 @@ useHead({
     { property: 'og:site_name', content: 'Cookie Jar' },
     { property: 'og:type', content: 'website' },
     { property: 'og:url', content: canonicalHref },
-    { property: 'og:image', content: `${SITE_URL}/cookie-jar-logo.png` },
+    { property: 'og:image', content: `${SITE_URL}/cookie-jar-icon-2048-slack-marketplace.png` },
     { name: 'twitter:card', content: 'summary_large_image' },
     { name: 'robots', content: 'index,follow' },
   ],
@@ -45,7 +45,7 @@ useHead({
             url: SITE_URL,
             logo: {
               '@type': 'ImageObject',
-              url: `${SITE_URL}/cookie-jar-logo.png`,
+              url: `${SITE_URL}/cookie-jar-icon-2048-slack-marketplace.png`,
               width: 2048,
               height: 2048,
             },
