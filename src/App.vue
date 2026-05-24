@@ -24,26 +24,33 @@ useHead({
   script: [
     {
       type: 'application/ld+json',
+      // WebSite + Organization graph. SoftwareApplication intentionally omitted
+      // until Cookie Jar lists on the Slack marketplace and has a real
+      // aggregateRating to cite — Google flags faked ratings as policy violations.
       innerHTML: JSON.stringify({
         '@context': 'https://schema.org',
-        '@type': 'SoftwareApplication',
-        name: 'Cookie Jar',
-        applicationCategory: 'BusinessApplication',
-        operatingSystem: 'Web, Slack',
-        url: SITE_URL,
-        description: 'Slack-native access management for small teams and startups.',
-        offers: {
-          '@type': 'Offer',
-          price: '0',
-          priceCurrency: 'USD',
-          description: '30-day free trial',
-        },
-        publisher: {
-          '@type': 'Organization',
-          name: 'Cookie Jar',
-          url: SITE_URL,
-          logo: `${SITE_URL}/cookie-jar-logo.png`,
-        },
+        '@graph': [
+          {
+            '@type': 'WebSite',
+            '@id': `${SITE_URL}/#website`,
+            url: SITE_URL,
+            name: 'Cookie Jar',
+            description: 'Slack-native access management for small teams and startups.',
+            publisher: { '@id': `${SITE_URL}/#organization` },
+          },
+          {
+            '@type': 'Organization',
+            '@id': `${SITE_URL}/#organization`,
+            name: 'Cookie Jar',
+            url: SITE_URL,
+            logo: {
+              '@type': 'ImageObject',
+              url: `${SITE_URL}/cookie-jar-logo.png`,
+              width: 2048,
+              height: 2048,
+            },
+          },
+        ],
       }),
     },
   ],
