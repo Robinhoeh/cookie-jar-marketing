@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { useI18n } from 'vue-i18n'
+import { useHead } from '@unhead/vue'
 import { addToSlackUrl } from '@/config/links'
 import SlackGlyph from '@/components/marks/SlackGlyph.vue'
 import CookieMeFrame from '@/components/frames/CookieMeFrame.vue'
@@ -10,6 +11,18 @@ import PipelineSection from '@/components/home/PipelineSection.vue'
 import FinalCtaSection from '@/components/home/FinalCtaSection.vue'
 
 const { t } = useI18n()
+
+const HOME_DESCRIPTION =
+  "Cookie Jar is Slack-native access management for startups and small teams. Request tools with /cookie, approve in Slack, see who has what — no spreadsheet, no IT ticket queue."
+
+useHead({
+  title: 'Cookie Jar — Slack access management',
+  meta: [
+    { name: 'description', content: HOME_DESCRIPTION },
+    { property: 'og:title', content: 'Cookie Jar — Slack access management' },
+    { property: 'og:description', content: HOME_DESCRIPTION },
+  ],
+})
 </script>
 
 <template>

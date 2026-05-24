@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue'
 import { useI18n } from 'vue-i18n'
+import { useHead } from '@unhead/vue'
 
 const { t, tm, rt } = useI18n()
 
@@ -50,6 +51,44 @@ function toggleProduct(i: number) {
 function toggleSecurity(i: number) {
   openSecurity.value = openSecurity.value === i ? null : i
 }
+
+const FAQ_DESCRIPTION =
+  "Answers about Cookie Jar's product behavior, Slack permissions, data handling, and security posture for teams evaluating access management."
+
+const faqSchema = computed(() => ({
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    ...productItems.value.map((f) => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: [f.a1, f.a2, f.a3].filter(Boolean).join(' '),
+      },
+    })),
+    ...securityItems.value.map((f) => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: { '@type': 'Answer', text: f.a },
+    })),
+  ],
+}))
+
+useHead({
+  title: 'FAQ & Security — Cookie Jar',
+  meta: [
+    { name: 'description', content: FAQ_DESCRIPTION },
+    { property: 'og:title', content: 'FAQ & Security — Cookie Jar' },
+    { property: 'og:description', content: FAQ_DESCRIPTION },
+  ],
+  script: [
+    {
+      type: 'application/ld+json',
+      innerHTML: computed(() => JSON.stringify(faqSchema.value)),
+    },
+  ],
+})
 </script>
 
 <template>

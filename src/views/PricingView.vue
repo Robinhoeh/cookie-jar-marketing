@@ -1,10 +1,23 @@
 <script setup lang="ts">
 import { computed, ref, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
+import { useHead } from '@unhead/vue'
 import { addToSlackUrl, supportEmail } from '@/config/links'
 import SlackGlyph from '@/components/marks/SlackGlyph.vue'
 
 const { t, tm, rt } = useI18n()
+
+const PRICING_DESCRIPTION =
+  'Simple flat pricing for startups and small teams. 30-day free trial, no credit card required. One price covers your whole Slack workspace.'
+
+useHead({
+  title: 'Pricing — Cookie Jar',
+  meta: [
+    { name: 'description', content: PRICING_DESCRIPTION },
+    { property: 'og:title', content: 'Pricing — Cookie Jar' },
+    { property: 'og:description', content: PRICING_DESCRIPTION },
+  ],
+})
 
 type Billing = 'monthly' | 'yearly'
 

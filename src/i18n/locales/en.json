@@ -354,6 +354,16 @@
           "quote": "\"did anyone pull their AWS keys?\""
         }
       ]
+    },
+    "whoFor": {
+      "eyebrow": "who it's for",
+      "title": "Built for the teams between scrappy and SOC 2.",
+      "items": [
+        { "title": "Startups without IT", "body": "You're 10–50 people, no dedicated admin, and access requests land in someone's DMs." },
+        { "title": "Engineering-led teams", "body": "Your founders or eng leads approve tool access today. Cookie Jar gives them a one-click path instead of a Notion doc." },
+        { "title": "SaaS sprawl, 10–100 people", "body": "You've got 30+ tools across the workspace and nobody can answer who has Figma." },
+        { "title": "Prepping for SOC 2", "body": "Auditors want an access log. Cookie Jar gives you a queryable record per tool, per person, per date." }
+      ]
     }
   },
   "pricing": {
