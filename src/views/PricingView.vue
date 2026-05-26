@@ -2,6 +2,7 @@
 import { computed, ref, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useHead } from '@unhead/vue'
+import { RouterLink } from 'vue-router'
 import { addToSlackUrl, supportEmail } from '@/config/links'
 import SlackGlyph from '@/components/marks/SlackGlyph.vue'
 
@@ -109,6 +110,10 @@ const familyMailto = `mailto:${supportEmail}?subject=${encodeURIComponent('Famil
         class="text-[15.5px] min-[1024px]:text-[18px] leading-[1.55] text-ink-muted mt-5 min-[1024px]:mt-[22px] mb-0 max-w-[620px] mx-auto"
       >
         {{ t('pricing.lede') }}
+      </p>
+      <p class="mt-3 text-[14px] min-[1024px]:text-[15px] text-ink-muted">
+        New to Cookie Jar?
+        <RouterLink to="/how-it-works" class="font-semibold text-purple no-underline hover:underline">See how it works →</RouterLink>
       </p>
 
       <!-- Billing toggle -->

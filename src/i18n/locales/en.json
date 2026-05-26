@@ -36,10 +36,35 @@
       "headlineLine1": "Slack-first access management",
       "headlineLine2": "for small teams.",
       "headlineLine3": "",
-      "subheadline": "Employees request tools with /cookie. Owners approve in Slack.",
+      "subheadline": "Your team requests access to GitHub, AWS, Figma, Google Workspace, Notion — 24 common tools out of the box — with /cookie. Owners approve in Slack.",
       "lede": "You see who has what, when you want. No DM pile-up, no spreadsheet.",
       "ctaPrimary": "Add to Slack",
       "finePrint": "30 days free · No card required · Slack admin install only"
+    },
+    "toolsStrip": {
+      "eyebrow": "works with the tools your team already uses",
+      "tools": [
+        "GitHub", "AWS", "Figma", "Google Workspace", "Notion", "Linear",
+        "Jira", "Vercel", "Stripe", "1Password", "Sentry", "PagerDuty"
+      ],
+      "outro": "+ 12 more, or add your own."
+    },
+    "whySlack": {
+      "eyebrow": "why slack",
+      "title": "Because that's where the work already is.",
+      "bullets": [
+        "Lives where the request actually happens — no new tool to learn.",
+        "Five-minute install, no IdP required.",
+        "Approvals in the same DM thread the requester is already in.",
+        "The dashboard holds the audit trail and access overview. Slack is for the loop, the dashboard is for the record."
+      ]
+    },
+    "whoForHome": {
+      "eyebrow": "who it's for",
+      "title": "Built for the messy middle.",
+      "body": "Cookie Jar is for teams of roughly 10–100 people, on Slack, where the founder or an engineering lead is still the one approving access requests. If that's you, you'll feel at home.",
+      "notForLabel": "Not built for:",
+      "notForBody": "companies on Microsoft Teams, or enterprises with a dedicated IAM team running Okta or Sailpoint — those tools already solve the problem better at that scale."
     },
     "standout1": {
       "tag": "standout 01",
@@ -320,40 +345,19 @@
     },
     "problem": {
       "eyebrow": "the problem",
-      "headlineLine1": "End the DM pile-up.",
-      "headlineLine2": "Keep the audit trail.",
-      "lede": "Access management evolves with team size, and most teams end up cobbling it together. Cookie Jar is what you use before you need a real IT department.",
-      "outro": "Cookie Jar replaces all four with one Slack-native flow.",
-      "milestones": [
-        {
-          "size": "10 people",
-          "surface": "#general",
-          "headline": "\"Hey, can someone add me to Figma?\"",
-          "body": "Access requests live in a shared channel. Cute now, invisible later.",
-          "quote": "\"hey can you add me to figma 🙏\""
-        },
-        {
-          "size": "30 people",
-          "surface": "DM the founder",
-          "headline": "Every request funnels to one person",
-          "body": "GitHub, AWS, Notion. They all go to whoever installed the workspace. The CTO becomes a human ticketing system.",
-          "quote": "\"sorry to bug you again — Linear access?\""
-        },
-        {
-          "size": "50 people",
-          "surface": "Notion page no one reads",
-          "headline": "Nobody knows who has what",
-          "body": "Someone makes a spreadsheet. It goes stale in a week. Six months in, you can't name who has GitHub admin or AWS root.",
-          "quote": "\"…who owns the Stripe seat again?\""
-        },
-        {
-          "size": "100 people",
-          "surface": "Real IT department",
-          "headline": "You hire someone to fix this",
-          "body": "Or onboarding takes a week. Or offboarding becomes a Friday-night guessing game about which keys to rotate.",
-          "quote": "\"did anyone pull their AWS keys?\""
-        }
-      ]
+      "headline": "Tracking SaaS access without an IT team.",
+      "sub": "End the DM pile-up. Keep the audit trail.",
+      "lede": "Every access request is a tax on two people. Here's where it hurts.",
+      "employee": {
+        "roleChip": "As an employee",
+        "headline": "Finding who owns GitHub, Figma, or AWS takes too long.",
+        "body": "You're new. You need access. You don't know who's admin, who got granted last week, or who left the company. So you DM the founder, hope it's right, and wait."
+      },
+      "owner": {
+        "roleChip": "As an owner",
+        "headline": "Approving access requests breaks your deep work.",
+        "body": "Heads-down on something. Slack ping: \"add me to Figma?\" Four clicks into the admin panel. Six tools. Six interruptions before lunch."
+      }
     },
     "whoFor": {
       "eyebrow": "who it's for",

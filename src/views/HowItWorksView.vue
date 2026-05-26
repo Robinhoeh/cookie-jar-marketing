@@ -25,7 +25,46 @@ const whoForItems = computed(() =>
 )
 
 const HOW_DESCRIPTION =
-  'See how Cookie Jar works: install in 3 minutes, assign tool owners, and let your startup request access in Slack with one click. Built for teams without a dedicated IT function.'
+  'How Cookie Jar works: install in 3 minutes, assign tool owners, then your startup requests SaaS access in Slack with one click. No IT team required.'
+
+const howToSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'HowTo',
+  name: 'How to set up Slack-native access management with Cookie Jar',
+  description:
+    'Install Cookie Jar in your Slack workspace, assign tool owners, then let your team request SaaS access with the /cookie command.',
+  totalTime: 'PT5M',
+  step: [
+    {
+      '@type': 'HowToStep',
+      position: 1,
+      name: 'Install Cookie Jar in Slack',
+      text: 'Click "Add to Slack" on the Cookie Jar marketing site or the Slack App Directory. A Slack workspace admin authorizes the OAuth scopes; Cookie Jar joins your workspace in under a minute.',
+      url: 'https://usecookiejar.com/how-it-works#setup',
+    },
+    {
+      '@type': 'HowToStep',
+      position: 2,
+      name: 'Assign tool owners',
+      text: 'Open the Cookie Jar dashboard and assign a teammate as the owner of each tool (e.g. head of design owns Figma, head of engineering owns GitHub). Multi-owner committees are supported.',
+      url: 'https://usecookiejar.com/how-it-works#setup',
+    },
+    {
+      '@type': 'HowToStep',
+      position: 3,
+      name: 'Team requests access in Slack',
+      text: 'Anyone on the team types /cookie request [tool] in Slack. Cookie Jar routes the request to the right owner with [Approve] [Deny] buttons.',
+      url: 'https://usecookiejar.com/how-it-works#pipeline',
+    },
+    {
+      '@type': 'HowToStep',
+      position: 4,
+      name: 'Owner approves and grants access',
+      text: 'The owner clicks Approve in their Slack DM, then adds the seat in the third-party tool (GitHub, Figma, AWS, etc.). Cookie Jar logs the grant with actor, target, tool, and timestamp.',
+      url: 'https://usecookiejar.com/how-it-works#pipeline',
+    },
+  ],
+}
 
 useHead({
   title: 'How it works — Cookie Jar',
@@ -33,6 +72,12 @@ useHead({
     { name: 'description', content: HOW_DESCRIPTION },
     { property: 'og:title', content: 'How Cookie Jar works' },
     { property: 'og:description', content: HOW_DESCRIPTION },
+  ],
+  script: [
+    {
+      type: 'application/ld+json',
+      innerHTML: JSON.stringify(howToSchema),
+    },
   ],
 })
 </script>

@@ -6,14 +6,17 @@ import SlackGlyph from '@/components/marks/SlackGlyph.vue'
 import CookieMeFrame from '@/components/frames/CookieMeFrame.vue'
 import CookieShelfFrame from '@/components/frames/CookieShelfFrame.vue'
 import CookieDidYouMeanFrame from '@/components/frames/CookieDidYouMeanFrame.vue'
+import ToolsStripSection from '@/components/home/ToolsStripSection.vue'
 import ProblemSection from '@/components/home/ProblemSection.vue'
 import PipelineSection from '@/components/home/PipelineSection.vue'
+import WhySlackSection from '@/components/home/WhySlackSection.vue'
+import WhoForHomeSection from '@/components/home/WhoForHomeSection.vue'
 import FinalCtaSection from '@/components/home/FinalCtaSection.vue'
 
 const { t } = useI18n()
 
 const HOME_DESCRIPTION =
-  "Cookie Jar is Slack-native access management for startups and small teams. Request tools with /cookie, approve in Slack, see who has what — no spreadsheet, no IT ticket queue."
+  "Slack-native access management for startups. Request GitHub, AWS, Figma, and 20+ tools with /cookie. Owners approve in Slack. Audit in the dashboard."
 
 useHead({
   title: 'Cookie Jar — Slack access management',
@@ -135,17 +138,21 @@ useHead({
     </div>
   </section>
 
-  <!-- Section break — dashed line marks hero → Problem transition on all viewports -->
-  <div class="mx-auto max-w-[1180px] px-4 min-[640px]:px-6 min-[1024px]:px-8">
-    <div class="border-t border-dashed border-cream-border-2" />
-  </div>
+  <!-- Section 2: Tools strip — what kind of access this brokers -->
+  <ToolsStripSection />
 
-  <!-- Section 2: The Problem -->
+  <!-- Section 3: The Problem -->
   <ProblemSection />
 
-  <!-- Section 3: How-it-works pipeline -->
+  <!-- Section 4: How-it-works pipeline -->
   <PipelineSection />
 
-  <!-- Section 4: Final CTA -->
+  <!-- Section 5: Why Slack — reframe Slack-native as advantage -->
+  <WhySlackSection />
+
+  <!-- Section 6: Who it's for — sweet spot + honest not-for -->
+  <WhoForHomeSection />
+
+  <!-- Section 7: Final CTA -->
   <FinalCtaSection />
 </template>

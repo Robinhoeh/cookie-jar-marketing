@@ -2,6 +2,7 @@
 import { computed, ref } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useHead } from '@unhead/vue'
+import { RouterLink } from 'vue-router'
 
 const { t, tm, rt } = useI18n()
 
@@ -278,6 +279,27 @@ useHead({
             </div>
           </li>
         </ul>
+      </div>
+
+      <!-- Cross-links — still considering? -->
+      <div class="mt-12 min-[1024px]:mt-14 pt-8 border-t border-cream-border">
+        <p class="text-[14px] min-[1024px]:text-[15px] text-ink-muted m-0 mb-3">
+          Still considering Cookie Jar?
+        </p>
+        <div class="flex flex-wrap gap-4 min-[1024px]:gap-5">
+          <RouterLink
+            to="/how-it-works"
+            class="inline-flex items-center gap-1.5 text-[14.5px] min-[1024px]:text-[15px] font-semibold text-purple no-underline hover:underline"
+          >
+            See how it works <span aria-hidden="true">→</span>
+          </RouterLink>
+          <RouterLink
+            to="/pricing"
+            class="inline-flex items-center gap-1.5 text-[14.5px] min-[1024px]:text-[15px] font-semibold text-purple no-underline hover:underline"
+          >
+            See pricing <span aria-hidden="true">→</span>
+          </RouterLink>
+        </div>
       </div>
     </div>
   </section>
