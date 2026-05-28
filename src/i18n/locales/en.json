@@ -33,16 +33,27 @@
     "hero": {
       "statusPillMobile": "Slack-first · First month free",
       "statusPillDesktop": "Slack-first access management · First month free",
-      "headlineLine1": "Slack-first access management",
-      "headlineLine2": "for small teams.",
+      "headlineLine1": "Slack Native Access Management",
+      "headlineLine2": "for small teams",
       "headlineLine3": "",
-      "subheadline": "Your team requests access to GitHub, AWS, Figma, Google Workspace, Notion — 24 common tools out of the box — with /cookie. Owners approve in Slack.",
-      "lede": "You see who has what, when you want. No DM pile-up, no spreadsheet.",
+      "subheadline": "",
+      "lede": "",
       "ctaPrimary": "Add to Slack",
-      "finePrint": "30 days free · No card required · Slack admin install only"
+      "tagline": "Manage your team's SaaS access in Slack — starting with /cookie like {'@'}teammate.",
+      "finePrint": "30 days free · No card required · Slack admin install only",
+      "employee": {
+        "role": "For employees",
+        "line": "Give your team the access they need, the moment they need it."
+      },
+      "admin": {
+        "role": "For admins",
+        "line": "Stop being the bottleneck for every access request."
+      }
     },
     "toolsStrip": {
-      "eyebrow": "works with the tools your team already uses",
+      "eyebrow": "Works with any SaaS tool out of the box. Request any with /cookie.",
+      "framing": "Cookie Jar manages access to SaaS apps directly in Slack. The audit trail is in the dashboard.",
+      "framingLinkLabel": "See how it works",
       "tools": [
         "GitHub", "AWS", "Figma", "Google Workspace", "Notion", "Linear",
         "Jira", "Vercel", "Stripe", "1Password", "Sentry", "PagerDuty"
@@ -345,18 +356,28 @@
     },
     "problem": {
       "eyebrow": "the problem",
-      "headline": "Tracking SaaS access without an IT team.",
-      "sub": "End the DM pile-up. Keep the audit trail.",
+      "headline": "Managing SaaS access without an IT team.",
+      "sub": "End the DM pile-up.",
       "lede": "Every access request is a tax on two people. Here's where it hurts.",
       "employee": {
         "roleChip": "As an employee",
+        "sceneTitle": "Employee left waiting…",
         "headline": "Finding who owns GitHub, Figma, or AWS takes too long.",
-        "body": "You're new. You need access. You don't know who's admin, who got granted last week, or who left the company. So you DM the founder, hope it's right, and wait."
+        "bullets": [
+          "You don't know who's admin — CTO? Eng lead? Someone who left?",
+          "You DM the founder and hope it's the right person.",
+          "Then you wait. And bump. And wait."
+        ]
       },
       "owner": {
         "roleChip": "As an owner",
+        "sceneTitle": "Won't have a chance to read their message today.",
         "headline": "Approving access requests breaks your deep work.",
-        "body": "Heads-down on something. Slack ping: \"add me to Figma?\" Four clicks into the admin panel. Six tools. Six interruptions before lunch."
+        "bullets": [
+          "Slack pings interrupt every block of real work.",
+          "Good chance your message isn't read for hours or more.",
+          "Even if they do read, they may need to DM someone else to give access."
+        ]
       }
     },
     "whoFor": {

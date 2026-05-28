@@ -6,6 +6,7 @@ import { addToSlackUrl } from '@/config/links'
 import { RouterLink } from 'vue-router'
 import SlackGlyph from '@/components/marks/SlackGlyph.vue'
 import VideoSection from '@/components/home/VideoSection.vue'
+import ToolsStripSection from '@/components/home/ToolsStripSection.vue'
 import SetupSection from '@/components/home/SetupSection.vue'
 import PipelineSection from '@/components/home/PipelineSection.vue'
 import DashboardSection from '@/components/home/DashboardSection.vue'
@@ -147,6 +148,9 @@ useHead({
       </div>
     </div>
   </section>
+
+  <!-- Tools we integrate with -->
+  <ToolsStripSection />
 
   <!-- 60-second walkthrough -->
   <VideoSection />

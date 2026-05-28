@@ -2,7 +2,14 @@
 import { computed, ref } from 'vue'
 import { useI18n } from 'vue-i18n'
 
+interface Props {
+  eyebrowOverride?: string
+}
+const props = defineProps<Props>()
+
 const { t, tm, rt } = useI18n()
+
+const eyebrowText = computed(() => props.eyebrowOverride ?? t('home.pipeline.eyebrow'))
 
 interface PipelineStep {
   n: string
@@ -84,7 +91,7 @@ function toggle(i: number) {
         class="inline-flex items-center gap-2 font-mono text-[11px] min-[1024px]:text-[12px] font-bold uppercase tracking-[1.4px] text-purple"
       >
         <span class="w-1.5 h-1.5 rounded-full bg-purple" />
-        {{ t('home.pipeline.eyebrow') }}
+        {{ eyebrowText }}
       </div>
 
       <!-- Headline -->

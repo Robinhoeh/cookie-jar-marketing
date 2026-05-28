@@ -6,17 +6,14 @@ import SlackGlyph from '@/components/marks/SlackGlyph.vue'
 import CookieMeFrame from '@/components/frames/CookieMeFrame.vue'
 import CookieShelfFrame from '@/components/frames/CookieShelfFrame.vue'
 import CookieDidYouMeanFrame from '@/components/frames/CookieDidYouMeanFrame.vue'
-import ToolsStripSection from '@/components/home/ToolsStripSection.vue'
 import ProblemSection from '@/components/home/ProblemSection.vue'
-import PipelineSection from '@/components/home/PipelineSection.vue'
-import WhySlackSection from '@/components/home/WhySlackSection.vue'
 import WhoForHomeSection from '@/components/home/WhoForHomeSection.vue'
 import FinalCtaSection from '@/components/home/FinalCtaSection.vue'
 
 const { t } = useI18n()
 
 const HOME_DESCRIPTION =
-  "Slack-native access management for startups. Request GitHub, AWS, Figma, and 20+ tools with /cookie. Owners approve in Slack. Audit in the dashboard."
+  "Slack access management for small teams. /cookie like @teammate clones a coworker's tool list. Request GitHub, Figma, AWS — approve in Slack."
 
 useHead({
   title: 'Cookie Jar — Slack access management',
@@ -49,22 +46,42 @@ useHead({
         </div>
 
         <h1
-          class="font-display font-bold m-0 text-ink text-[44px] leading-[1] tracking-[-1.3px] min-[1024px]:text-[76px] min-[1024px]:leading-[0.98] min-[1024px]:tracking-[-1.6px]"
+          class="font-display font-bold m-0 text-ink text-[40px] leading-[1] tracking-[-1.2px] min-[1024px]:text-[64px] min-[1024px]:leading-[1] min-[1024px]:tracking-[-1.4px]"
         >
           {{ t('home.hero.headlineLine1') }}<br />
           <span class="text-purple">{{ t('home.hero.headlineLine2') }}</span>
         </h1>
 
-        <p
-          class="font-display font-semibold text-ink text-[17px] leading-[1.4] mt-[18px] mb-0 tracking-[-0.2px] min-[1024px]:text-[22px] min-[1024px]:mt-7 min-[1024px]:tracking-[-0.3px] min-[1024px]:max-w-[520px]"
-        >
-          {{ t('home.hero.subheadline') }}
-        </p>
-        <p
-          class="text-[14.5px] leading-[1.55] text-ink-muted mt-2 mb-0 min-[1024px]:text-[17px] min-[1024px]:mt-3 min-[1024px]:max-w-[480px]"
-        >
-          {{ t('home.hero.lede') }}
-        </p>
+        <!-- Dual-audience H2 cards: shows both sides of who the tool unblocks.
+             Green = employee, gold = admin (matches ProblemSection + PipelineSection role colors). -->
+        <div class="mt-5 min-[1024px]:mt-7 flex flex-col gap-2.5 min-[1024px]:gap-3">
+          <div
+            class="relative rounded-[10px] bg-white/70 border border-cream-border px-4 py-3 min-[1024px]:px-[18px] min-[1024px]:py-3.5 overflow-hidden"
+          >
+            <span aria-hidden="true" class="absolute left-0 top-0 bottom-0 w-1 bg-green" />
+            <div class="pl-1">
+              <div class="font-mono text-[10.5px] min-[1024px]:text-[11px] font-bold uppercase tracking-[1.2px] text-green">
+                {{ t('home.hero.employee.role') }}
+              </div>
+              <h2 class="font-display font-bold text-ink m-0 mt-1 text-[15.5px] min-[1024px]:text-[17px] leading-[1.3] tracking-[-0.2px]">
+                {{ t('home.hero.employee.line') }}
+              </h2>
+            </div>
+          </div>
+          <div
+            class="relative rounded-[10px] bg-white/70 border border-cream-border px-4 py-3 min-[1024px]:px-[18px] min-[1024px]:py-3.5 overflow-hidden"
+          >
+            <span aria-hidden="true" class="absolute left-0 top-0 bottom-0 w-1" style="background: #FFB703;" />
+            <div class="pl-1">
+              <div class="font-mono text-[10.5px] min-[1024px]:text-[11px] font-bold uppercase tracking-[1.2px]" style="color: #8A5E00;">
+                {{ t('home.hero.admin.role') }}
+              </div>
+              <h2 class="font-display font-bold text-ink m-0 mt-1 text-[15.5px] min-[1024px]:text-[17px] leading-[1.3] tracking-[-0.2px]">
+                {{ t('home.hero.admin.line') }}
+              </h2>
+            </div>
+          </div>
+        </div>
 
         <!-- CTAs: full-width stacked on mobile, inline on desktop -->
         <div
@@ -79,7 +96,11 @@ useHead({
           </a>
         </div>
 
-        <div class="mt-[18px] min-[1024px]:mt-7 text-[12.5px] min-[1024px]:text-[13px] text-ink-muted">
+        <p class="mt-4 min-[1024px]:mt-5 text-[13.5px] min-[1024px]:text-[14.5px] text-ink leading-[1.5] m-0 max-w-[520px]">
+          {{ t('home.hero.tagline') }}
+        </p>
+
+        <div class="mt-[14px] min-[1024px]:mt-4 text-[12.5px] min-[1024px]:text-[13px] text-ink-muted">
           {{ t('home.hero.finePrint') }}
         </div>
       </div>
@@ -138,21 +159,12 @@ useHead({
     </div>
   </section>
 
-  <!-- Section 2: Tools strip — what kind of access this brokers -->
-  <ToolsStripSection />
-
-  <!-- Section 3: The Problem -->
+  <!-- Section 2: PAIN expanded — two-role problem cards -->
   <ProblemSection />
 
-  <!-- Section 4: How-it-works pipeline -->
-  <PipelineSection />
-
-  <!-- Section 5: Why Slack — reframe Slack-native as advantage -->
-  <WhySlackSection />
-
-  <!-- Section 6: Who it's for — sweet spot + honest not-for -->
+  <!-- Section 3: FIT — sweet spot + honest not-for -->
   <WhoForHomeSection />
 
-  <!-- Section 7: Final CTA -->
+  <!-- Section 4: Final CTA -->
   <FinalCtaSection />
 </template>
