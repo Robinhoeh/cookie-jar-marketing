@@ -52,34 +52,24 @@ useHead({
           <span class="text-purple">{{ t('home.hero.headlineLine2') }}</span>
         </h1>
 
-        <!-- Dual-audience H2 cards: shows both sides of who the tool unblocks.
+        <!-- Dual-audience H2 lines: same broken loop from both sides.
              Green = employee, gold = admin (matches ProblemSection + PipelineSection role colors). -->
-        <div class="mt-5 min-[1024px]:mt-7 flex flex-col gap-2.5 min-[1024px]:gap-3">
-          <div
-            class="relative rounded-[10px] bg-white/70 border border-cream-border px-4 py-3 min-[1024px]:px-[18px] min-[1024px]:py-3.5 overflow-hidden"
-          >
-            <span aria-hidden="true" class="absolute left-0 top-0 bottom-0 w-1 bg-green" />
-            <div class="pl-1">
-              <div class="font-mono text-[10.5px] min-[1024px]:text-[11px] font-bold uppercase tracking-[1.2px] text-green">
-                {{ t('home.hero.employee.role') }}
-              </div>
-              <h2 class="font-display font-bold text-ink m-0 mt-1 text-[15.5px] min-[1024px]:text-[17px] leading-[1.3] tracking-[-0.2px]">
-                {{ t('home.hero.employee.line') }}
-              </h2>
+        <div class="mt-5 min-[1024px]:mt-7 flex flex-col gap-4 min-[1024px]:gap-5">
+          <div>
+            <div class="font-mono text-[10.5px] min-[1024px]:text-[11px] font-bold uppercase tracking-[1.2px] text-green">
+              {{ t('home.hero.employee.role') }}
             </div>
+            <h2 class="font-display font-bold m-0 mt-1 text-[15.5px] min-[1024px]:text-[17px] leading-[1.3] tracking-[-0.2px] text-green">
+              {{ t('home.hero.employee.line') }}
+            </h2>
           </div>
-          <div
-            class="relative rounded-[10px] bg-white/70 border border-cream-border px-4 py-3 min-[1024px]:px-[18px] min-[1024px]:py-3.5 overflow-hidden"
-          >
-            <span aria-hidden="true" class="absolute left-0 top-0 bottom-0 w-1" style="background: #FFB703;" />
-            <div class="pl-1">
-              <div class="font-mono text-[10.5px] min-[1024px]:text-[11px] font-bold uppercase tracking-[1.2px]" style="color: #8A5E00;">
-                {{ t('home.hero.admin.role') }}
-              </div>
-              <h2 class="font-display font-bold text-ink m-0 mt-1 text-[15.5px] min-[1024px]:text-[17px] leading-[1.3] tracking-[-0.2px]">
-                {{ t('home.hero.admin.line') }}
-              </h2>
+          <div>
+            <div class="font-mono text-[10.5px] min-[1024px]:text-[11px] font-bold uppercase tracking-[1.2px]" style="color: #8A5E00;">
+              {{ t('home.hero.admin.role') }}
             </div>
+            <h2 class="font-display font-bold m-0 mt-1 text-[15.5px] min-[1024px]:text-[17px] leading-[1.3] tracking-[-0.2px]" style="color: #8A5E00;">
+              {{ t('home.hero.admin.line') }}
+            </h2>
           </div>
         </div>
 

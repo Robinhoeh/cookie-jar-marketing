@@ -33,8 +33,8 @@
     "hero": {
       "statusPillMobile": "Slack-first · First month free",
       "statusPillDesktop": "Slack-first access management · First month free",
-      "headlineLine1": "Slack Native Access Management",
-      "headlineLine2": "for small teams",
+      "headlineLine1": "Manage your team's SaaS apps",
+      "headlineLine2": "directly in Slack.",
       "headlineLine3": "",
       "subheadline": "",
       "lede": "",
@@ -43,11 +43,11 @@
       "finePrint": "30 days free · No card required · Slack admin install only",
       "employee": {
         "role": "For employees",
-        "line": "Give your team the access they need, the moment they need it."
+        "line": "Need access to an app but not sure who owns it?"
       },
       "admin": {
         "role": "For admins",
-        "line": "Stop being the bottleneck for every access request."
+        "line": "Tired of being asked who owns what?"
       }
     },
     "toolsStrip": {
