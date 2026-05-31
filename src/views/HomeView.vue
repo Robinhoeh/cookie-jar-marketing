@@ -59,7 +59,7 @@ useHead({
             <div class="font-mono text-[10.5px] min-[1024px]:text-[11px] font-bold uppercase tracking-[1.2px] text-green">
               {{ t('home.hero.employee.role') }}
             </div>
-            <h2 class="font-display font-bold m-0 mt-1 text-[15.5px] min-[1024px]:text-[17px] leading-[1.3] tracking-[-0.2px] text-green">
+            <h2 class="font-display font-bold m-0 mt-1 text-[15.5px] min-[1024px]:text-[17px] leading-[1.3] tracking-[-0.2px] text-ink">
               {{ t('home.hero.employee.line') }}
             </h2>
           </div>
@@ -67,7 +67,7 @@ useHead({
             <div class="font-mono text-[10.5px] min-[1024px]:text-[11px] font-bold uppercase tracking-[1.2px]" style="color: #8A5E00;">
               {{ t('home.hero.admin.role') }}
             </div>
-            <h2 class="font-display font-bold m-0 mt-1 text-[15.5px] min-[1024px]:text-[17px] leading-[1.3] tracking-[-0.2px]" style="color: #8A5E00;">
+            <h2 class="font-display font-bold m-0 mt-1 text-[15.5px] min-[1024px]:text-[17px] leading-[1.3] tracking-[-0.2px] text-ink">
               {{ t('home.hero.admin.line') }}
             </h2>
           </div>
