@@ -43,11 +43,11 @@
       "finePrint": "30 days free · No card required · Slack admin install only",
       "employee": {
         "role": "For employees",
-        "line": "Need access to an app but not sure who owns it?"
+        "line": "Need access to a tool but stuck tracking down who owns it?"
       },
       "admin": {
         "role": "For admins",
-        "line": "Tired of being asked who owns what?"
+        "line": "Pulled out of deep work for another access request?"
       }
     },
     "toolsStrip": {

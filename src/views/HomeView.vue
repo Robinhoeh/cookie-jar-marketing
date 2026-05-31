@@ -54,7 +54,7 @@ useHead({
 
         <!-- Dual-audience H2 lines: same broken loop from both sides.
              Green = employee, gold = admin (matches ProblemSection + PipelineSection role colors). -->
-        <div class="mt-5 min-[1024px]:mt-7 flex flex-col gap-4 min-[1024px]:gap-5">
+        <div class="mt-5 min-[1024px]:mt-7 rounded-[14px] bg-white/70 border border-cream-border px-5 py-5 min-[1024px]:px-6 min-[1024px]:py-6 flex flex-col gap-4 min-[1024px]:gap-5">
           <div>
             <div class="font-mono text-[10.5px] min-[1024px]:text-[11px] font-bold uppercase tracking-[1.2px] text-green">
               {{ t('home.hero.employee.role') }}
@@ -86,13 +86,6 @@ useHead({
           </a>
         </div>
 
-        <p class="mt-4 min-[1024px]:mt-5 text-[13.5px] min-[1024px]:text-[14.5px] text-ink leading-[1.5] m-0 max-w-[520px]">
-          {{ t('home.hero.tagline') }}
-        </p>
-
-        <div class="mt-[14px] min-[1024px]:mt-4 text-[12.5px] min-[1024px]:text-[13px] text-ink-muted">
-          {{ t('home.hero.finePrint') }}
-        </div>
       </div>
 
       <!-- Right: stacked Slack mocks -->
